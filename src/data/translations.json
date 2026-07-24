@@ -1,0 +1,344 @@
+{
+  "pt": {
+    "header": {
+      "availableForWork": "Disponível para trabalho",
+      "downloadCv": "Baixar CV",
+      "contact": "Contato",
+      "openMenu": "Abrir menu",
+      "closeMenu": "Fechar menu",
+      "mainNav": "Principal"
+    },
+    "hero": {
+      "quote": "Seja desenvolvendo software ou organizando a vida, busco clareza, equilíbrio e impacto duradouro. Acredito que grandes sistemas são construídos com intenção, consistência e atenção aos detalhes.",
+      "years": "10+ anos exp.",
+      "role": "Engenheiro de Software Sênior, baseado em São Paulo.",
+      "scroll": "Rolar",
+      "backToTop": "Voltar ao topo"
+    },
+    "about": {
+      "title": "sobre",
+      "body": "Sou engenheiro de software sênior com mais de 10 anos de experiência construindo aplicações web, ferramentas e plataformas internas. Prezo por código limpo, interfaces claras e por resolver problemas reais com soluções simples. Atualmente baseado em São Paulo, disponível para trabalhos freelance ou colaboração em produtos digitais bem pensados."
+    },
+    "experience": {
+      "title": "experiência",
+      "items": [
+        {
+          "meta": "Remoto  •  2022–Presente",
+          "role": "Desenvolvedor Freelance",
+          "description": "Construí dashboards personalizados, ferramentas internas e landing pages para startups de healthtech, fintech e B2B SaaS. Atuei de ponta a ponta, do wireframe à produção."
+        },
+        {
+          "meta": "Draftspace  •  São Francisco  •  2019–2022",
+          "role": "Engenheiro Líder",
+          "description": "Liderei o desenvolvimento de uma plataforma colaborativa de escrita usada por mais de 100 mil usuários. Foco em performance, sincronização em tempo real e uma experiência de editor fluida."
+        },
+        {
+          "meta": "Northflow  •  Remoto  •  2016–2019",
+          "role": "Desenvolvedor Fullstack",
+          "description": "Desenvolvi e mantive funcionalidades fullstack em múltiplas linhas de produto, melhorando confiabilidade, cobertura de testes e velocidade de deploy."
+        },
+        {
+          "meta": "Peak Studio  •  Berlim  •  2014–2016",
+          "role": "Estagiário Frontend",
+          "description": "Primeiro emprego em tecnologia. Aprendi as bases de desenvolvimento frontend, acessibilidade e entrega no prazo. Construí componentes de UI e mantive design systems."
+        }
+      ]
+    },
+    "skills": {
+      "title": "habilidades",
+      "items": [
+        "TypeScript",
+        "JavaScript",
+        "HTML5 / CSS3",
+        "React",
+        "Next.js",
+        "Vue.js",
+        "Angular",
+        "Tailwind CSS",
+        "React Native",
+        "Flutter",
+        "Node.js",
+        "Express",
+        "GraphQL",
+        "tRPC",
+        "REST APIs",
+        "PostgreSQL",
+        "Drizzle ORM",
+        "Prisma",
+        "Neon",
+        "Git & GitHub",
+        "CI/CD",
+        "AWS",
+        "Vercel",
+        "Cloudflare",
+        "Inngest",
+        "Arquitetura de Software",
+        "Arquitetura Limpa",
+        "Princípios SOLID",
+        "Design de Sistemas",
+        "Otimização de Performance",
+        "Revisão de Código e Mentoria",
+        "Testes e QA",
+        "Depuração",
+        "Engenharia de IA",
+        "Liderança Técnica",
+        "Visão de Produto",
+        "Colaboração Remota"
+      ]
+    },
+    "education": {
+      "title": "formação",
+      "items": [
+        {
+          "meta": "Frontend Masters  •  2021–2022",
+          "title": "Trilha Avançada de JavaScript & React",
+          "description": "Curso avançado com foco em performance de frontend, arquitetura de componentes e fluxos modernos de desenvolvimento. Ênfase em código limpo, acessibilidade e design systems escaláveis."
+        },
+        {
+          "meta": "UC Berkeley Extension  •  2017–2018",
+          "title": "Certificado: Desenvolvimento Web Full-Stack",
+          "description": "Programa prático com foco em JavaScript, React, Node.js e REST APIs. Desenvolvi projetos em equipe e implantei aplicações escaláveis em infraestrutura de nuvem."
+        },
+        {
+          "meta": "University of Southern California  •  2010–2014",
+          "title": "Bacharelado: Ciência da Computação",
+          "description": "Estudei os fundamentos de ciência da computação, incluindo engenharia de software, algoritmos e arquitetura de sistemas. Formado com uma base sólida em aspectos teóricos e práticos da programação."
+        }
+      ]
+    },
+    "languages": {
+      "title": "idiomas",
+      "items": [
+        { "name": "Inglês", "level": "Proficiência avançada" },
+        { "name": "Espanhol", "level": "Nativo" },
+        { "name": "Alemão", "level": "Iniciante A2" },
+        { "name": "Russo", "level": "Iniciante A1" }
+      ]
+    },
+    "references": {
+      "title": "referências",
+      "items": [
+        {
+          "name": "Julia Reyes",
+          "role": "Haven Health  •  Fundadora",
+          "quote": "Mark é um dos raros engenheiros que avança rápido sem quebrar as coisas. Ele entregou nosso MVP de ponta a ponta e nunca perdeu o senso de detalhe."
+        },
+        {
+          "name": "David Lin",
+          "role": "Northflow  •  Head de Tecnologia",
+          "quote": "Confiável, calmo sob pressão e um ótimo comunicador. As revisões de código do Mark deixaram toda a equipe melhor."
+        },
+        {
+          "name": "Sarah Kim",
+          "role": "Draftspace  •  VP de Engenharia",
+          "quote": "Ele liderou a reescrita do nosso editor do zero e entregou um produto mais rápido e estável do que imaginávamos ser possível nesse prazo."
+        }
+      ]
+    },
+    "awards": {
+      "title": "prêmios",
+      "items": [
+        { "title": "Site do Mês", "meta": "Awwwards  •  2024" },
+        { "title": "Projeto Destaque da Semana", "meta": "Product Hunt  •  2024" },
+        { "title": "Vencedor de Hackathon", "meta": "DevPost  •  2023" }
+      ]
+    },
+    "publications": {
+      "title": "publicações",
+      "items": [
+        {
+          "title": "Como Construí e Lancei um Micro SaaS em 30 Dias",
+          "meta": "Indie Hackers  •  2024"
+        },
+        {
+          "title": "Projetando Ferramentas para Devs com UX em Mente",
+          "meta": "Smashing Magazine  •  2023"
+        },
+        {
+          "title": "O Custo do Overengineering: Um Estudo de Caso de um Produto que Fracassou",
+          "meta": "TechCrunch  •  2022"
+        }
+      ]
+    },
+    "contact": {
+      "title": "contato",
+      "phoneLabel": "Telefone",
+      "emailLabel": "Email",
+      "linkedinLabel": "Linkedin",
+      "githubLabel": "Github",
+      "thanks": "Obrigado por estar aqui",
+      "tagline": "Vamos criar\nalgo\nincrível"
+    }
+  },
+  "en": {
+    "header": {
+      "availableForWork": "Available for work",
+      "downloadCv": "Download CV",
+      "contact": "Contact",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "mainNav": "Main"
+    },
+    "hero": {
+      "quote": "Whether building software or organizing life, I look for clarity, balance, and lasting impact. I believe great systems are built with intention, consistency, and attention to detail.",
+      "years": "10+ yrs exp.",
+      "role": "Senior Software Engineer, based in São Paulo.",
+      "scroll": "Scroll",
+      "backToTop": "Back to top"
+    },
+    "about": {
+      "title": "about",
+      "body": "I'm a senior software engineer with 10+ years of experience building web apps, tools, and internal platforms. I care about clean code, clear interfaces, and solving real problems with simple solutions. Currently based in São Paulo, available for freelance work or collaboration on thoughtful digital products."
+    },
+    "experience": {
+      "title": "experience",
+      "items": [
+        {
+          "meta": "Remote  •  2022–Present",
+          "role": "Freelance Developer",
+          "description": "Built custom dashboards, internal tools, and landing pages for startups in healthtech, fintech, and B2B SaaS. Worked end-to-end from wireframes to production."
+        },
+        {
+          "meta": "Draftspace  •  San Francisco  •  2019–2022",
+          "role": "Lead Engineer",
+          "description": "Led development of a collaborative writing platform used by 100K+ users. Focused on performance, real-time sync, and a seamless editor experience."
+        },
+        {
+          "meta": "Northflow  •  Remote  •  2016–2019",
+          "role": "Fullstack Developer",
+          "description": "Built and maintained full-stack features across multiple product lines, improving reliability, test coverage, and deployment speed."
+        },
+        {
+          "meta": "Peak Studio  •  Berlin  •  2014–2016",
+          "role": "Frontend Intern",
+          "description": "First job in tech. Learned the ropes of frontend development, accessibility, and shipping on time. Built UI components and maintained design systems."
+        }
+      ]
+    },
+    "skills": {
+      "title": "skills",
+      "items": [
+        "TypeScript",
+        "JavaScript",
+        "HTML5 / CSS3",
+        "React",
+        "Next.js",
+        "Vue.js",
+        "Angular",
+        "Tailwind CSS",
+        "React Native",
+        "Flutter",
+        "Node.js",
+        "Express",
+        "GraphQL",
+        "tRPC",
+        "REST APIs",
+        "PostgreSQL",
+        "Drizzle ORM",
+        "Prisma",
+        "Neon",
+        "Git & GitHub",
+        "CI/CD",
+        "AWS",
+        "Vercel",
+        "Cloudflare",
+        "Inngest",
+        "Software Architecture",
+        "Clean Architecture",
+        "SOLID Principles",
+        "System Design",
+        "Performance Optimization",
+        "Code Reviews & Mentoring",
+        "Testing & QA",
+        "Debugging",
+        "AI Engineering",
+        "Technical Leadership",
+        "Product Thinking",
+        "Remote Collaboration"
+      ]
+    },
+    "education": {
+      "title": "education",
+      "items": [
+        {
+          "meta": "Frontend Masters  •  2021–2022",
+          "title": "Advanced JavaScript & React Track",
+          "description": "Completed advanced coursework in frontend performance, component architecture, and modern development workflows. Focused on clean code, accessibility, and scalable design systems."
+        },
+        {
+          "meta": "UC Berkeley Extension  •  2017–2018",
+          "title": "Certificate Program: Full-Stack Web Development",
+          "description": "Completed a hands-on program focused on JavaScript, React, Node.js, and REST APIs. Built team-based projects and deployed scalable applications using cloud infrastructure."
+        },
+        {
+          "meta": "University of Southern California  •  2010–2014",
+          "title": "Bachelor's Degree: Computer Science",
+          "description": "Studied core computer science principles including software engineering, algorithms, and system architecture. Graduated with strong foundations in both theoretical and practical aspects of programming."
+        }
+      ]
+    },
+    "languages": {
+      "title": "languages",
+      "items": [
+        { "name": "English", "level": "Highly proficient" },
+        { "name": "Spanish", "level": "Native speaker" },
+        { "name": "German", "level": "Beginner A2" },
+        { "name": "Russian", "level": "Beginner A1" }
+      ]
+    },
+    "references": {
+      "title": "references",
+      "items": [
+        {
+          "name": "Julia Reyes",
+          "role": "Haven Health  •  Founder",
+          "quote": "Mark is one of the rare engineers who moves fast without breaking things. He shipped our MVP end-to-end and never lost sight of the details."
+        },
+        {
+          "name": "David Lin",
+          "role": "Northflow  •  Head of Technology",
+          "quote": "Reliable, calm under pressure, and a great communicator. Mark's code reviews made the whole team better."
+        },
+        {
+          "name": "Sarah Kim",
+          "role": "Draftspace  •  VP of Engineering",
+          "quote": "He led our editor rewrite from scratch and delivered a faster, more stable product than we thought possible on that timeline."
+        }
+      ]
+    },
+    "awards": {
+      "title": "awards",
+      "items": [
+        { "title": "Website of the Month", "meta": "Awwwards  •  2024" },
+        { "title": "Top Project of the Week", "meta": "Product Hunt  •  2024" },
+        { "title": "DevPost Hackathon Winner", "meta": "DevPost  •  2023" }
+      ]
+    },
+    "publications": {
+      "title": "publications",
+      "items": [
+        {
+          "title": "How I Built and Launched a Micro SaaS in 30 Days",
+          "meta": "Indie Hackers  •  2024"
+        },
+        {
+          "title": "Designing Developer Tools with UX in Mind",
+          "meta": "Smashing Magazine  •  2023"
+        },
+        {
+          "title": "The Cost of Overengineering: A Case Study from a Failed Product",
+          "meta": "TechCrunch  •  2022"
+        }
+      ]
+    },
+    "contact": {
+      "title": "contact",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "linkedinLabel": "Linkedin",
+      "githubLabel": "Github",
+      "thanks": "Thanks for being here",
+      "tagline": "Let's make\nsomething\ngreat"
+    }
+  }
+}

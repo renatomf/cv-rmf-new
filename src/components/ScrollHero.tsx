@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useTranslations } from "@/lib/i18n/LocaleContext";
 
 export default function ScrollHero() {
+  const t = useTranslations();
   const heroRef = useRef<HTMLElement>(null);
   const [viewport, setViewport] = useState({ width: 1920, height: 1080 });
   const [pastExperience, setPastExperience] = useState(false);
@@ -133,14 +135,14 @@ export default function ScrollHero() {
         <div className="@container relative mx-auto flex w-full max-w-353 flex-1 flex-col justify-between px-4 md:px-10">
           <div className="flex justify-end pt-34 opacity-0 md:opacity-100">
             <p className="max-w-xs text-start text-sm font-bold uppercase leading-5 md:max-w-xs md:text-[15px] md:pl-4">
-              &ldquo;Seja desenvolvendo software ou organizando a vida, busco clareza, equilíbrio e impacto duradouro. Acredito que grandes sistemas são construídos com intenção, consistência e atenção aos detalhes.&rdquo;
+              &ldquo;{t.hero.quote}&rdquo;
             </p>
           </div>
 
           <div className="mt-16 mb-30 md:mb-0 md:mt-24">
             <div className="font-bold text-accent text-2xl">
               <p>2008→2026</p>
-              <p>10+ anos exp.</p>
+              <p>{t.hero.years}</p>
             </div>
 
             <div className="mt-6">
@@ -153,7 +155,7 @@ export default function ScrollHero() {
                 </span>
               </h1>
               <p className="mt-6 max-w-md text-medium md:text-medium font-bold ml-3">
-                Engenheiro de Software Sênior, baseado em Sao Paulo.
+                {t.hero.role}
               </p>
             </div>
           </div>
@@ -166,13 +168,13 @@ export default function ScrollHero() {
             <button
               type="button"
               onClick={scrollToTop}
-              className="text-xs uppercase tracking-wide text-medium transition-colors hover:text-accent cursor-pointer font-bold" 
+              className="text-xs uppercase tracking-wide text-medium transition-colors hover:text-accent cursor-pointer font-bold"
             >
-              Back to top
+              {t.hero.backToTop}
             </button>
           ) : (
             <span className="text-xs uppercase tracking-wide text-medium font-bold text-lef">
-              Scroll
+              {t.hero.scroll}
             </span>
           )}
         </div>

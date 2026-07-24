@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale, useTranslations } from "@/lib/i18n/LocaleContext";
 
 function MenuIcon({ open }: { open: boolean }) {
   return (
@@ -20,6 +21,10 @@ function MenuIcon({ open }: { open: boolean }) {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { locale, setLocale } = useLocale();
+  const t = useTranslations();
+
+  const toggleLocale = () => setLocale(locale === "pt" ? "en" : "pt");
 
   return (
     <>
@@ -42,12 +47,12 @@ export default function Header() {
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex size-2.5 rounded-full bg-accent" />
               </span>
-              <span className="text-accent text-sm">Diponivel para trabalho</span>
+              <span className="text-accent text-sm">{t.header.availableForWork}</span>
             </span>
           </div>
 
           <nav
-            aria-label="Principal"
+            aria-label={t.header.mainNav}
             className="hidden flex-col items-start gap-1 text-sm md:flex"
           >
             <div className="flex items-center gap-6 md:gap-36">
@@ -55,15 +60,31 @@ export default function Header() {
                 href="#"
                 className="font-medium text-[15px] transition-colors hover:text-accent"
               >
-                Download CV
+                {t.header.downloadCv}
               </a>
-              <span className="text-muted">PT - EN</span>
+              <button type="button" onClick={toggleLocale} className="text-muted cursor-pointer">
+                <span
+                  className={`font-bold transition-colors hover:text-accent ${
+                    locale === "pt" ? "text-accent" : ""
+                  }`}
+                >
+                  PT
+                </span>
+                {" - "}
+                <span
+                  className={`font-bold transition-colors hover:text-accent ${
+                    locale === "en" ? "text-accent" : ""
+                  }`}
+                >
+                  EN
+                </span>
+              </button>
             </div>
             <a
               href="#contact"
               className="font-medium transition-colors hover:text-accent text-[15px]"
             >
-              Contato
+              {t.header.contact}
             </a>
           </nav>
 
@@ -72,7 +93,7 @@ export default function Header() {
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-label={open ? t.header.closeMenu : t.header.openMenu}
             className="relative z-20 flex size-10 items-center justify-center rounded-full text-foreground transition-colors hover:text-accent md:hidden"
           >
             <MenuIcon open={open} />
@@ -81,7 +102,7 @@ export default function Header() {
 
         <nav
           id="mobile-menu"
-          aria-label="Principal"
+          aria-label={t.header.mainNav}
           aria-hidden={!open}
           className={`relative z-20 mx-6 mt-2 flex flex-col gap-1 rounded-2xl border border-line bg-background/95 p-2 text-sm backdrop-blur transition-all duration-300 ease-out md:hidden ${
             open
@@ -94,14 +115,26 @@ export default function Header() {
             onClick={() => setOpen(false)}
             className="rounded-xl px-4 py-3 font-medium transition-colors hover:text-accent"
           >
-            Download CV
+            {t.header.downloadCv}
           </a>
+          <button
+            type="button"
+            onClick={() => {
+              toggleLocale();
+              setOpen(false);
+            }}
+            className="rounded-xl px-4 py-3 text-left font-medium transition-colors hover:text-accent"
+          >
+            <span className={locale === "pt" ? "text-accent" : undefined}>PT</span>
+            {" - "}
+            <span className={locale === "en" ? "text-accent" : undefined}>EN</span>
+          </button>
           <a
             href="#contact"
             onClick={() => setOpen(false)}
             className="rounded-xl px-4 py-3 font-medium transition-colors hover:text-accent"
           >
-            Contato
+            {t.header.contact}
           </a>
         </nav>
       </header>
