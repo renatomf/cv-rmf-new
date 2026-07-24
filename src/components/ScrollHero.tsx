@@ -98,8 +98,9 @@ export default function ScrollHero() {
             alt=""
             fill
             priority
-            sizes="100vw"
-            className="object-cover"
+            sizes="(min-width: 768px) 35vw, 100vw"
+            className="object-cover object-[center_43%] md:object-[100%_43%] lg:object-[center_43%]"
+
           />
           <div className="absolute inset-0 bg-black/40" />
           {/* Soft fade on the leading edge instead of a hard crop line */}
@@ -119,7 +120,7 @@ export default function ScrollHero() {
         className="relative flex min-h-screen flex-col justify-between overflow-hidden pt-0 pb-0 md:pt-14 md:pb-8"
       >
         {/* Mobile: static full-bleed image, no scroll animation */}
-        <div className="absolute inset-0 md:hidden">
+        <div className="absolute inset-0 overflow-hidden md:hidden">
           <Image
             src="/image-4.png"
             alt=""
@@ -133,7 +134,7 @@ export default function ScrollHero() {
         </div>
 
         <div className="@container relative mx-auto flex w-full max-w-353 flex-1 flex-col justify-between px-4 md:px-10">
-          <div className="flex justify-end pt-34 opacity-0 md:opacity-100">
+          <div className="flex justify-end pt-34 opacity-0 md:opacity-100 lg:-mr-6">
             <p className="max-w-xs text-start text-sm font-bold uppercase leading-5 md:max-w-xs md:text-[15px] md:pl-4">
               &ldquo;{t.hero.quote}&rdquo;
             </p>
@@ -141,16 +142,16 @@ export default function ScrollHero() {
 
           <div className="mt-16 mb-30 md:mb-0 md:mt-24">
             <div className="font-bold text-accent text-2xl">
-              <p>2008→2026</p>
+              <p>2010→2026</p>
               <p>{t.hero.years}</p>
             </div>
 
             <div className="mt-6">
               <h1 className="max-w-3xl text-right font-bold uppercase leading-[0.9] tracking-tight">
-                <span className="block text-right text-[14vw] sm:text-[9vw] md:text-[6vw] lg:text-[7.85rem]">
+                <span className="block text-right text-[14vw] sm:text-[9vw] md:text-[6.5rem] lg:text-[7.85rem]">
                   Renato
                 </span>
-                <span className="block text-right text-[17vw] sm:text-[13vw] md:text-[9vw] lg:text-[9.5rem]">
+                <span className="block text-right text-[17vw] sm:text-[13vw] md:text-[8rem] lg:text-[9.5rem]">
                   Marques
                 </span>
               </h1>

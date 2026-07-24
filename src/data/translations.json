@@ -23,24 +23,91 @@
       "title": "experiência",
       "items": [
         {
-          "meta": "Remoto  •  2022–Presente",
-          "role": "Desenvolvedor Freelance",
-          "description": "Construí dashboards personalizados, ferramentas internas e landing pages para startups de healthtech, fintech e B2B SaaS. Atuei de ponta a ponta, do wireframe à produção."
+          "meta": "LINKZ Informática  •  São Paulo  •  2025–atual",
+          "role": "Desenvolvedor Full Stack",
+          "description": "Atuação no desenvolvimento de plataformas SaaS para publicidade digital, contribuindo para a definição da arquitetura da aplicação, evolução técnica da plataforma e integração de Inteligência Artificial ao ciclo de desenvolvimento.",
+          "highlights": [
+            "Desenvolvimento de aplicações com React e Next.js, utilizando SSR e React Server Components (RSC) para otimizar performance, SEO e experiência do usuário.",
+            "Arquitetura e implementação de CMSs personalizados para gerenciamento de conteúdo, campanhas e métricas de performance.",
+            "Desenvolvimento de APIs e serviços utilizando Node.js, PostgreSQL, REST e tRPC, apoiando integrações e geração de relatórios.",
+            "Integração de LLMs (GPT e Claude) para automação de geração de conteúdo, otimização de processos e construção de fluxos assíncronos utilizando Inngest.",
+            "Colaboração na evolução da arquitetura da plataforma, priorizando escalabilidade, reutilização de código e produtividade do time."
+          ]
         },
         {
-          "meta": "Draftspace  •  São Francisco  •  2019–2022",
-          "role": "Engenheiro Líder",
-          "description": "Liderei o desenvolvimento de uma plataforma colaborativa de escrita usada por mais de 100 mil usuários. Foco em performance, sincronização em tempo real e uma experiência de editor fluida."
+          "meta": "BRLink  •  São Paulo  •  2019–2024",
+          "role": "Desenvolvedor Front-end Senior",
+          "description": "Atuação em projetos enterprise, liderando iniciativas de arquitetura Front-End, evolução de Design Systems e definição de padrões técnicos para aplicações escaláveis utilizadas por múltiplas equipes.",
+          "highlights": [
+            "Definição da arquitetura Front-End utilizando React, Next.js e Flutter, com foco em escalabilidade, performance e manutenção de longo prazo.",
+            "Liderança da evolução do Design System, definindo componentes, tokens, padrões visuais e boas práticas com Material UI e Tailwind CSS.",
+            "Condução de code reviews, mentoria técnica e padronização do desenvolvimento entre squads.",
+            "Integração com serviços AWS (EC2, S3 e Lambda) por meio de APIs REST.",
+            "Implementação de estratégias de gerenciamento de estado utilizando Context API e BLoC (Flutter).",
+            "Evolução da qualidade do software com Jest, Cypress, CI/CD e monitoramento em produção utilizando Sentry."
+          ]
         },
         {
-          "meta": "Northflow  •  Remoto  •  2016–2019",
-          "role": "Desenvolvedor Fullstack",
-          "description": "Desenvolvi e mantive funcionalidades fullstack em múltiplas linhas de produto, melhorando confiabilidade, cobertura de testes e velocidade de deploy."
+          "meta": "Ortiz Gaming  •  São Paulo  •  2018–2019",
+          "role": "Desenvolvedor Front-end",
+          "description": "Desenvolvimento de plataforma web para monitoramento e gerenciamento remoto de máquinas de jogos em tempo real, priorizando confiabilidade, performance e atualização contínua de dados.",
+          "highlights": [
+            "Desenvolvimento da interface utilizando Angular, com foco em aplicações de alta disponibilidade.",
+            "Implementação de gerenciamento de estado reativo utilizando RxJS e NgRx.",
+            "Integração com APIs REST, WebSockets e estratégias de polling para atualização de informações em tempo real.",
+            "Evolução da arquitetura Front-End para suportar fluxos complexos e comunicação contínua entre clientes e servidores."
+          ]
         },
         {
-          "meta": "Peak Studio  •  Berlim  •  2014–2016",
-          "role": "Estagiário Frontend",
-          "description": "Primeiro emprego em tecnologia. Aprendi as bases de desenvolvimento frontend, acessibilidade e entrega no prazo. Construí componentes de UI e mantive design systems."
+          "meta": "FitBank  •  São Paulo  •  2017–2018",
+          "role": "Desenvolvedor Front-End & UX Designer",
+          "description": "Desenvolvimento de aplicações para o mercado financeiro, atuando na construção de fluxos críticos de pagamento e na evolução da experiência do usuário.",
+          "highlights": [
+            "Desenvolvimento de interfaces utilizando Angular para operações financeiras como pagamentos, transferências e gestão de contas.",
+            "Atuação em UX Design, contribuindo para definição da experiência e identidade visual do produto.",
+            "Desenvolvimento de funcionalidades mobile utilizando Xamarin.",
+            "Colaboração com equipes de produto e back-end na definição de contratos de APIs e evolução dos fluxos da plataforma."
+          ]
+        },
+        {
+          "meta": "Rm10 Publicidade  •  São Paulo  •  2015–2016",
+          "role": "Desenvolvedor Front-End / Designer Gráfico",
+          "description": "Desenvolvimento de sites, hotsites e landing pages para campanhas digitais, combinando desenvolvimento Front-End, design e comunicação visual.",
+          "highlights": [
+            "Desenvolvimento de websites responsivos e páginas promocionais.",
+            "Criação de campanhas digitais, e-mail marketing e materiais gráficos.",
+            "Otimização da experiência do usuário e adaptação para diferentes dispositivos."
+          ]
+        },
+        {
+          "meta": "LINKZ Informática  •  São Paulo  •  2012–2014",
+          "role": "Desenvolvedor Front-end",
+          "description": "Desenvolvimento de soluções web, e-commerce e aplicações mobile para diferentes segmentos de mercado, participando da evolução de produtos digitais desde a concepção até a entrega.",
+          "highlights": [
+            "Desenvolvimento de websites, aplicações web e soluções de e-commerce.",
+            "Desenvolvimento de aplicativos mobile e plataformas de e-learning.",
+            "Participação na criação de campanhas digitais e experiências multimídia para clientes."
+          ]
+        },
+        {
+          "meta": "FISCOSOFT  •  São Paulo  •  2010–2011",
+          "role": "Desenvolvedor Front-end / Designer Gráfico",
+          "description": "Atuação no desenvolvimento de soluções digitais e materiais institucionais para uma das principais referências em conteúdo tributário e jurídico do país.",
+          "highlights": [
+            "Desenvolvimento e manutenção de páginas web e conteúdos digitais.",
+            "Produção de materiais gráficos, campanhas de e-mail marketing e conteúdos multimídia.",
+            "Criação de animações, cursos online e materiais de comunicação institucional."
+          ]
+        },
+        {
+          "meta": "Catho  •  São Paulo  •  2008–2010",
+          "role": "Desenvolvedor Front-end",
+          "description": "Desenvolvimento de plataformas de ensino a distância (E-learning), colaborando na criação de experiências digitais voltadas à capacitação profissional.",
+          "highlights": [
+            "Desenvolvimento de cursos online e interfaces educacionais.",
+            "Colaboração com equipes multidisciplinares na criação de conteúdos interativos.",
+            "Evolução de aplicações voltadas para treinamento nas áreas de gestão, finanças, marketing e recursos humanos."
+          ]
         }
       ]
     },
@@ -90,47 +157,40 @@
       "title": "formação",
       "items": [
         {
-          "meta": "Frontend Masters  •  2021–2022",
-          "title": "Trilha Avançada de JavaScript & React",
-          "description": "Curso avançado com foco em performance de frontend, arquitetura de componentes e fluxos modernos de desenvolvimento. Ênfase em código limpo, acessibilidade e design systems escaláveis."
+          "meta": "Universidade Anhembi-Morumbi  •  2010–2012",
+          "title": "Bacharelado em Design Digital",
+          "description": "O curso une teoria e prática em design gráfico, UX/UI, programação e animação em uma formação multidisciplinar."
         },
         {
-          "meta": "UC Berkeley Extension  •  2017–2018",
-          "title": "Certificado: Desenvolvimento Web Full-Stack",
-          "description": "Programa prático com foco em JavaScript, React, Node.js e REST APIs. Desenvolvi projetos em equipe e implantei aplicações escaláveis em infraestrutura de nuvem."
-        },
-        {
-          "meta": "University of Southern California  •  2010–2014",
-          "title": "Bacharelado: Ciência da Computação",
-          "description": "Estudei os fundamentos de ciência da computação, incluindo engenharia de software, algoritmos e arquitetura de sistemas. Formado com uma base sólida em aspectos teóricos e práticos da programação."
+          "meta": "Amazon Web Services (AWS)  •  2023–2024",
+          "title": "AWS Certified Developer – Associate"
         }
       ]
     },
     "languages": {
       "title": "idiomas",
       "items": [
-        { "name": "Inglês", "level": "Proficiência avançada" },
-        { "name": "Espanhol", "level": "Nativo" },
-        { "name": "Alemão", "level": "Iniciante A2" },
-        { "name": "Russo", "level": "Iniciante A1" }
+        { "name": "Português", "level": "Nativo (C2)" },
+        { "name": "Inglês", "level": "Intermediário avançado (B2)" },
+        { "name": "Espanhol", "level": "Básico (A2)" }
       ]
     },
     "references": {
       "title": "referências",
       "items": [
         {
-          "name": "Julia Reyes",
-          "role": "Haven Health  •  Fundadora",
-          "quote": "Mark é um dos raros engenheiros que avança rápido sem quebrar as coisas. Ele entregou nosso MVP de ponta a ponta e nunca perdeu o senso de detalhe."
+          "name": "Marcelo Fernandes",
+          "role": "Linkz Informática  •  Sócio-fundador",
+          "quote": "Renato é um dos raros engenheiros que avança rápido sem quebrar as coisas. Ele entregou nosso MVP de ponta a ponta e nunca perdeu o senso de detalhe."
         },
         {
-          "name": "David Lin",
-          "role": "Northflow  •  Head de Tecnologia",
-          "quote": "Confiável, calmo sob pressão e um ótimo comunicador. As revisões de código do Mark deixaram toda a equipe melhor."
+          "name": "Gederson Chiquesi",
+          "role": "BRLink  •  Coordenador de Engenharia de Dados",
+          "quote": "Confiável, calmo sob pressão e um ótimo comunicador. As revisões de código do Renato deixaram toda a equipe melhor."
         },
         {
-          "name": "Sarah Kim",
-          "role": "Draftspace  •  VP de Engenharia",
+          "name": "Leandro Barbosa",
+          "role": "BRLink  •  Tech Lead",
           "quote": "Ele liderou a reescrita do nosso editor do zero e entregou um produto mais rápido e estável do que imaginávamos ser possível nesse prazo."
         }
       ]
@@ -194,24 +254,91 @@
       "title": "experience",
       "items": [
         {
-          "meta": "Remote  •  2022–Present",
-          "role": "Freelance Developer",
-          "description": "Built custom dashboards, internal tools, and landing pages for startups in healthtech, fintech, and B2B SaaS. Worked end-to-end from wireframes to production."
+          "meta": "LINKZ Informática  •  São Paulo  •  2025–present",
+          "role": "Full Stack Developer",
+          "description": "Working on SaaS platforms for digital advertising, contributing to application architecture, the platform's technical evolution, and the integration of AI into the development lifecycle.",
+          "highlights": [
+            "Built applications with React and Next.js, using SSR and React Server Components (RSC) to optimize performance, SEO, and user experience.",
+            "Architected and implemented custom CMSs for content, campaign, and performance-metrics management.",
+            "Developed APIs and services with Node.js, PostgreSQL, REST, and tRPC, supporting integrations and reporting.",
+            "Integrated LLMs (GPT and Claude) to automate content generation, optimize processes, and build asynchronous workflows with Inngest.",
+            "Collaborated on the platform's architecture evolution, prioritizing scalability, code reuse, and team productivity."
+          ]
         },
         {
-          "meta": "Draftspace  •  San Francisco  •  2019–2022",
-          "role": "Lead Engineer",
-          "description": "Led development of a collaborative writing platform used by 100K+ users. Focused on performance, real-time sync, and a seamless editor experience."
+          "meta": "BRLink  •  São Paulo  •  2019–2024",
+          "role": "Senior Front-end Developer",
+          "description": "Worked on enterprise projects, leading Front-End architecture initiatives, Design System evolution, and technical standards for scalable applications used across multiple teams.",
+          "highlights": [
+            "Defined Front-End architecture using React, Next.js, and Flutter, focused on scalability, performance, and long-term maintainability.",
+            "Led Design System evolution, defining components, tokens, visual standards, and best practices with Material UI and Tailwind CSS.",
+            "Conducted code reviews, technical mentoring, and development standardization across squads.",
+            "Integrated with AWS services (EC2, S3, and Lambda) through REST APIs.",
+            "Implemented state management strategies using Context API and BLoC (Flutter).",
+            "Improved software quality with Jest, Cypress, CI/CD, and production monitoring using Sentry."
+          ]
         },
         {
-          "meta": "Northflow  •  Remote  •  2016–2019",
-          "role": "Fullstack Developer",
-          "description": "Built and maintained full-stack features across multiple product lines, improving reliability, test coverage, and deployment speed."
+          "meta": "Ortiz Gaming  •  São Paulo  •  2018–2019",
+          "role": "Front-end Developer",
+          "description": "Developed a web platform for real-time monitoring and remote management of gaming machines, prioritizing reliability, performance, and continuous data updates.",
+          "highlights": [
+            "Built the interface using Angular, focused on high-availability applications.",
+            "Implemented reactive state management using RxJS and NgRx.",
+            "Integrated REST APIs, WebSockets, and polling strategies for real-time data updates.",
+            "Evolved the Front-End architecture to support complex flows and continuous client-server communication."
+          ]
         },
         {
-          "meta": "Peak Studio  •  Berlin  •  2014–2016",
-          "role": "Frontend Intern",
-          "description": "First job in tech. Learned the ropes of frontend development, accessibility, and shipping on time. Built UI components and maintained design systems."
+          "meta": "FitBank  •  São Paulo  •  2017–2018",
+          "role": "Front-End Developer & UX Designer",
+          "description": "Built applications for the financial market, working on critical payment flows and the evolution of the user experience.",
+          "highlights": [
+            "Built interfaces using Angular for financial operations such as payments, transfers, and account management.",
+            "Worked on UX Design, contributing to the product's experience and visual identity.",
+            "Developed mobile features using Xamarin.",
+            "Collaborated with product and back-end teams on API contracts and platform flow evolution."
+          ]
+        },
+        {
+          "meta": "Rm10 Publicidade  •  São Paulo  •  2015–2016",
+          "role": "Front-End Developer / Graphic Designer",
+          "description": "Developed websites, hotsites, and landing pages for digital campaigns, combining Front-End development, design, and visual communication.",
+          "highlights": [
+            "Developed responsive websites and promotional pages.",
+            "Created digital campaigns, email marketing, and graphic materials.",
+            "Optimized user experience and adapted layouts for different devices."
+          ]
+        },
+        {
+          "meta": "LINKZ Informática  •  São Paulo  •  2012–2014",
+          "role": "Front-end Developer",
+          "description": "Developed web, e-commerce, and mobile solutions across different market segments, contributing to digital products from concept through delivery.",
+          "highlights": [
+            "Developed websites, web applications, and e-commerce solutions.",
+            "Built mobile apps and e-learning platforms.",
+            "Contributed to digital campaigns and multimedia experiences for clients."
+          ]
+        },
+        {
+          "meta": "FISCOSOFT  •  São Paulo  •  2010–2011",
+          "role": "Front-end Developer / Graphic Designer",
+          "description": "Worked on digital solutions and institutional materials for one of the country's leading references in tax and legal content.",
+          "highlights": [
+            "Developed and maintained web pages and digital content.",
+            "Produced graphic materials, email marketing campaigns, and multimedia content.",
+            "Created animations, online courses, and institutional communication materials."
+          ]
+        },
+        {
+          "meta": "Catho  •  São Paulo  •  2008–2010",
+          "role": "Front-end Developer",
+          "description": "Developed distance-learning (e-learning) platforms, contributing to digital experiences for professional training.",
+          "highlights": [
+            "Developed online courses and educational interfaces.",
+            "Collaborated with cross-functional teams on interactive content.",
+            "Evolved applications for training in management, finance, marketing, and HR."
+          ]
         }
       ]
     },
@@ -261,47 +388,40 @@
       "title": "education",
       "items": [
         {
-          "meta": "Frontend Masters  •  2021–2022",
-          "title": "Advanced JavaScript & React Track",
-          "description": "Completed advanced coursework in frontend performance, component architecture, and modern development workflows. Focused on clean code, accessibility, and scalable design systems."
+          "meta": "Anhembi-Morumbi University  •  2010–2012",
+          "title": "Bachelor's Degree in Digital Design",
+          "description": "The program combines theory and practice in graphic design, UX/UI, programming, and animation in a multidisciplinary curriculum."
         },
         {
-          "meta": "UC Berkeley Extension  •  2017–2018",
-          "title": "Certificate Program: Full-Stack Web Development",
-          "description": "Completed a hands-on program focused on JavaScript, React, Node.js, and REST APIs. Built team-based projects and deployed scalable applications using cloud infrastructure."
-        },
-        {
-          "meta": "University of Southern California  •  2010–2014",
-          "title": "Bachelor's Degree: Computer Science",
-          "description": "Studied core computer science principles including software engineering, algorithms, and system architecture. Graduated with strong foundations in both theoretical and practical aspects of programming."
+          "meta": "Amazon Web Services (AWS)  •  2023–2024",
+          "title": "AWS Certified Developer – Associate"
         }
       ]
     },
     "languages": {
       "title": "languages",
       "items": [
-        { "name": "English", "level": "Highly proficient" },
-        { "name": "Spanish", "level": "Native speaker" },
-        { "name": "German", "level": "Beginner A2" },
-        { "name": "Russian", "level": "Beginner A1" }
+        { "name": "Portuguese", "level": "Native speaker (C2)" },
+        { "name": "English", "level": "Upper-intermediate (B2)" },
+        { "name": "Spanish", "level": "Basic (A2)" }
       ]
     },
     "references": {
       "title": "references",
       "items": [
         {
-          "name": "Julia Reyes",
-          "role": "Haven Health  •  Founder",
-          "quote": "Mark is one of the rare engineers who moves fast without breaking things. He shipped our MVP end-to-end and never lost sight of the details."
+          "name": "Marcelo Fernandes",
+          "role": "Linkz Informática  •  Founding Partner",
+          "quote": "Renato is one of the rare engineers who moves fast without breaking things. He shipped our MVP end-to-end and never lost sight of the details."
         },
         {
-          "name": "David Lin",
-          "role": "Northflow  •  Head of Technology",
-          "quote": "Reliable, calm under pressure, and a great communicator. Mark's code reviews made the whole team better."
+          "name": "Gederson Chiquesi",
+          "role": "BRLink  •  Data Engineering Coordinator",
+          "quote": "Reliable, calm under pressure, and a great communicator. Renato's code reviews made the whole team better."
         },
         {
-          "name": "Sarah Kim",
-          "role": "Draftspace  •  VP of Engineering",
+          "name": "Leandro Barbosa",
+          "role": "BRLink  •  Tech Lead",
           "quote": "He led our editor rewrite from scratch and delivered a faster, more stable product than we thought possible on that timeline."
         }
       ]

@@ -11,7 +11,7 @@ export function Contact({ index }: { index: string }) {
       title={t.contact.title}
       footer={
         <div className="mt-90">
-          <p className="text-[3.3rem] font-extrabold uppercase leading-[0.9] tracking-tight md:text-[10rem]">
+          <p className="wrap-break-word text-[3.3rem] font-extrabold uppercase leading-[0.9] tracking-tight md:text-[7rem] lg:text-[10rem]">
             {t.contact.thanks}
           </p>
           <p className="mt-6 max-w-xl whitespace-pre-line text-3xl md:text-3xl md:justify-end md:flex font-bold text-accent ">

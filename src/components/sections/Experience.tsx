@@ -13,7 +13,14 @@ export function Experience({ index }: { index: string }) {
             <h3 className="mt-1 text-xl font-semibold md:text-2xl">
               {item.role}
             </h3>
-            <p className="mt-3 max-w-2xl text-muted">{item.description}</p>
+            <p className="mt-3 max-w-2xl text-sm text-muted">{item.description}</p>
+            {item.highlights && item.highlights.length > 0 && (
+              <ul className="mt-3 max-w-2xl list-disc space-y-1.5 pl-5 text-sm text-muted">
+                {item.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
       </div>

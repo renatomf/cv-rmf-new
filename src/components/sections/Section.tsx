@@ -22,7 +22,7 @@ export function Section({
   footer?: React.ReactNode;
 }) {
   return (
-    <section id={id} className="relative py-16 md:py-24">
+    <section id={id} className="relative py-16 md:py-18">
       <div className="mx-auto max-w-348 px-6 md:px-10">
         <div className="w-full max-w-4xl border-t border-line pt-6">
           <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-16">
