@@ -1,0 +1,110 @@
+"use client";
+
+import { useState } from "react";
+
+function MenuIcon({ open }: { open: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" className="size-8 translate-x-1.5" fill="currentColor">
+      {open ? (
+        <path d="M6.4 4.98 4.98 6.4 10.59 12l-5.61 5.6 1.42 1.42L12 13.41l5.6 5.61 1.42-1.42L13.41 12l5.61-5.6-1.42-1.42L12 10.59Z" />
+      ) : (
+        <>
+          <rect x="4" y="6" width="16" height="2" rx="1" />
+          <rect x="4" y="11" width="16" height="2" rx="1" />
+          <rect x="4" y="16" width="16" height="2" rx="1" />
+        </>
+      )}
+    </svg>
+  );
+}
+
+export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <div
+        onClick={() => setOpen(false)}
+        aria-hidden="true"
+        className={`fixed inset-0 z-10 transition-all duration-500 ease-out md:hidden ${
+          open
+            ? "pointer-events-auto bg-black/40 backdrop-blur-md opacity-100"
+            : "pointer-events-none bg-black/0 backdrop-blur-none opacity-0"
+        }`}
+      />
+
+      <header className="fixed inset-x-0 top-0 z-20 bg-transparent py-2">
+        <div className="mx-auto flex max-w-348 items-start justify-between px-6 py-4 md:px-10">
+          <div className="flex flex-col gap-1 text-md font-medium md:flex-row md:items-center md:gap-4">
+            <span className="font-semibold tracking-tight">Renato Marques</span>
+            <span className="flex items-center gap-3">
+              <span className="relative flex size-2.5">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-75" />
+                <span className="relative inline-flex size-2.5 rounded-full bg-accent" />
+              </span>
+              <span className="text-accent text-sm">Diponivel para trabalho</span>
+            </span>
+          </div>
+
+          <nav
+            aria-label="Principal"
+            className="hidden flex-col items-start gap-1 text-sm md:flex"
+          >
+            <div className="flex items-center gap-6 md:gap-36">
+              <a
+                href="#"
+                className="font-medium text-[15px] transition-colors hover:text-accent"
+              >
+                Download CV
+              </a>
+              <span className="text-muted">PT - EN</span>
+            </div>
+            <a
+              href="#contact"
+              className="font-medium transition-colors hover:text-accent text-[15px]"
+            >
+              Contato
+            </a>
+          </nav>
+
+          <button
+            type="button"
+            onClick={() => setOpen((value) => !value)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            className="relative z-20 flex size-10 items-center justify-center rounded-full text-foreground transition-colors hover:text-accent md:hidden"
+          >
+            <MenuIcon open={open} />
+          </button>
+        </div>
+
+        <nav
+          id="mobile-menu"
+          aria-label="Principal"
+          aria-hidden={!open}
+          className={`relative z-20 mx-6 mt-2 flex flex-col gap-1 rounded-2xl border border-line bg-background/95 p-2 text-sm backdrop-blur transition-all duration-300 ease-out md:hidden ${
+            open
+              ? "pointer-events-auto translate-y-0 opacity-100"
+              : "pointer-events-none -translate-y-2 opacity-0"
+          }`}
+        >
+          <a
+            href="#"
+            onClick={() => setOpen(false)}
+            className="rounded-xl px-4 py-3 font-medium transition-colors hover:text-accent"
+          >
+            Download CV
+          </a>
+          <a
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="rounded-xl px-4 py-3 font-medium transition-colors hover:text-accent"
+          >
+            Contato
+          </a>
+        </nav>
+      </header>
+    </>
+  );
+}

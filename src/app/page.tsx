@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import { Section } from "@/components/Section";
 import ScrollHero from "@/components/ScrollHero";
 
@@ -46,6 +47,7 @@ const skills = [
   "REST APIs",
   "PostgreSQL",
   "Drizzle ORM",
+  "Prisma",
   "Neon",
   "Git & GitHub",
   "CI/CD",
@@ -158,37 +160,7 @@ function ExternalLinkIcon() {
 export default function Home() {
   return (
     <div className="flex-1">
-      <header className="fixed inset-x-0 py-4 top-0 z-10 bg-transparent">
-        <div className="mx-auto flex max-w-348 items-start justify-between px-6 py-4 md:px-10">
-          <div className="flex items-center gap-4 text-md font-medium">
-            <span className="font-semibold tracking-tight">Mark Anderson</span>
-            <span className="flex items-center gap-3">
-              <span className="relative flex size-2">
-                <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-75" />
-                <span className="relative inline-flex size-2 rounded-full bg-accent" />
-              </span>
-              <span className="text-accent">Available for work</span>
-            </span>
-          </div>
-          <div className="flex flex-col items-start gap-1 text-sm">
-            <div className="flex items-center gap-44">
-              <a
-                href="#"
-                className="font-medium text-[15px] transition-colors hover:text-accent"
-              >
-                Download CV
-              </a>
-              <span className="text-muted">PT - EN</span>
-            </div>
-            <a
-              href="mailto:mark@anderson.dev"
-              className="font-medium transition-colors hover:text-accent text-[15px]"
-            >
-              Contact Me
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <ScrollHero />
@@ -220,7 +192,7 @@ export default function Home() {
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-line px-4 py-2 text-sm text-muted"
+                className="rounded-xl border border-line px-4 py-1 text-sm"
               >
                 {skill}
               </span>
@@ -303,71 +275,60 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section index="09." title="Contact">
-          <div>
-            <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
-              <div>
-                <p className="text-sm text-muted">Phone</p>
-                <a href="tel:+12135550192" className="mt-1 block font-medium">
-                  +1 213 555 0192
-                </a>
-              </div>
-              <div>
-                <p className="text-sm text-muted">Email</p>
-                <a
-                  href="mailto:mark@anderson.dev"
-                  className="mt-1 block font-medium"
-                >
-                  mark@anderson.dev
-                </a>
-              </div>
-              <div>
-                <p className="text-sm text-muted">Site</p>
-                <a
-                  href="https://anderson.dev"
-                  className="mt-1 block font-medium"
-                >
-                  anderson.dev
-                </a>
-              </div>
-              <div>
-                <p className="text-sm text-muted">Socials</p>
-                <div className="mt-1 flex flex-col">
-                  <a href="#" className="font-medium">
-                    Instagram
-                  </a>
-                  <a href="#" className="font-medium">
-                    LinkedIn
-                  </a>
-                  <a href="#" className="font-medium">
-                    X
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-20">
-              <p className="text-xl text-muted md:text-2xl">
+        <Section
+          index="09."
+          title="Contact"
+          footer={
+            <div className="mt-90">
+              <p className="text-[3.3rem] font-extrabold uppercase leading-[0.9] tracking-tight md:text-[10rem]">
                 Thanks for being here
               </p>
-              <h3 className="mt-2 text-4xl font-extrabold uppercase leading-none md:text-6xl">
-                Let&rsquo;s make
-                <br />
-                something great
-              </h3>
+              <p className="mt-6 max-w-xl whitespace-pre-line text-3xl md:text-3xl md:justify-end md:flex font-bold text-accent ">
+                {"Let’s make\nsomething\ngreat"}
+              </p>
+            </div>
+          }
+        >
+          <div className="flex flex-col gap-8">
+            <div>
+              <p className="text-sm text-muted">Phone</p>
+              <a href="https://wa.me/5511972550341" className="mt-1 block font-extrabold text-xl hover:text-accent">
+                +55 11 97255-0341
+              </a>
+            </div>
+            <div>
+              <p className="text-sm text-muted">Email</p>
+              <a
+                href="mailto:renatomardev@gmail.com"
+                className="mt-1 block font-extrabold text-xl hover:text-accent"
+              >
+                renatomardev@gmail.com
+              </a>
+            </div>
+            <div>
+              <p className="text-sm text-muted">Linkedin</p>
+              <a href="https://www.linkedin.com/in/renatomf/" className="mt-1 block font-extrabold text-xl hover:text-accent">
+                linkedin.com/in/renatomf
+              </a>
+            </div>
+            <div>
+              <p className="text-sm text-muted">Github</p>
+              <a href="https://github.com/renatomf" className="mt-1 block font-extrabold text-xl hover:text-accent">
+                github.com/renatomf
+              </a>
             </div>
           </div>
         </Section>
       </main>
 
-      <footer className="border-t border-line">
+      <footer>
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between md:px-10">
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <span className="font-medium text-foreground">Mark Anderson</span>
             <span className="size-1.5 rounded-full bg-accent" />
             Available for work
           </div>
-          <span>(UTC–8)</span>
+          <span>(UTC–8)</span> */}
         </div>
       </footer>
     </div>

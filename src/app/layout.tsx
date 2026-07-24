@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mark Anderson — Senior Software Engineer",
+  title: "Renato Marques — Senior Software Engineer",
   description:
-    "Senior Software Engineer based in Los Angeles. 10+ years of experience building web applications.",
+    "Engenheiro de Software Sênior baseado em São Paulo. Mais de 15 anos de experiência no desenvolvimento de aplicações web.",
 };
 
 export default function RootLayout({
