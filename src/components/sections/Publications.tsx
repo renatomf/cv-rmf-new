@@ -1,5 +1,4 @@
 import { Section } from "@/components/sections/Section";
-import { ExternalLinkIcon } from "@/components/ExternalLinkIcon";
 import { useTranslations } from "@/lib/i18n/LocaleContext";
 
 export function Publications({ index }: { index: string }) {
@@ -17,7 +16,6 @@ export function Publications({ index }: { index: string }) {
             <span className="font-medium">{pub.title}</span>
             <span className="flex shrink-0 items-center gap-2 text-sm text-muted">
               {pub.meta}
-              <ExternalLinkIcon />
             </span>
           </a>
         ))}

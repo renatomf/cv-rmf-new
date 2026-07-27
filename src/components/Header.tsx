@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "@/lib/i18n/LocaleContext";
+import translations from "@/data/translations.json";
 
 function MenuIcon({ open }: { open: boolean }) {
   return (
@@ -23,8 +24,33 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const { locale, setLocale } = useLocale();
   const t = useTranslations();
+  const cvRef = useRef<HTMLAnchorElement>(null);
 
   const toggleLocale = () => setLocale(locale === "pt" ? "en" : "pt");
+
+  // Publishes the "download cv" link's viewport x-position as a CSS variable so
+  // the scroll indicator (a separate, unrelated component) can anchor to it
+  // exactly instead of guessing at matching widths.
+  useLayoutEffect(() => {
+    const el = cvRef.current;
+    if (!el) return;
+
+    const update = () => {
+      document.documentElement.style.setProperty(
+        "--cv-anchor-left",
+        `${el.getBoundingClientRect().left}px`
+      );
+    };
+
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    window.addEventListener("resize", update);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", update);
+    };
+  }, [locale]);
 
   return (
     <>
@@ -38,7 +64,7 @@ export default function Header() {
         }`}
       />
 
-      <header className="fixed inset-x-0 top-0 z-20 bg-transparent py-2">
+      <header className="fixed inset-x-0 top-0 z-20 h-40 bg-linear-to-b from-black via-black/60 to-transparent">
         <div className="mx-auto flex max-w-348 items-start justify-between px-6 py-4 md:px-10">
           <div className="flex flex-col gap-1 text-md font-medium md:flex-row md:items-center md:gap-4">
             <span className="font-semibold tracking-tight">Renato Marques</span>
@@ -55,13 +81,24 @@ export default function Header() {
             aria-label={t.header.mainNav}
             className="hidden flex-col items-start gap-1 text-sm md:flex"
           >
-            <div className="flex items-center gap-6 md:gap-36">
-              <a
-                href="#"
-                className="font-medium text-[15px] transition-colors hover:text-accent"
-              >
-                {t.header.downloadCv}
-              </a>
+            <div className="flex items-center gap-6 md:gap-30">
+              <div className="grid">
+                <a
+                  ref={cvRef}
+                  href="#"
+                  className="col-start-1 row-start-1 font-medium text-[15px] transition-colors hover:text-accent"
+                >
+                  {t.header.downloadCv}
+                </a>
+                <span
+                  aria-hidden="true"
+                  className="invisible col-start-1 row-start-1 font-medium text-[15px]"
+                >
+                  {locale === "pt"
+                    ? translations.en.header.downloadCv
+                    : translations.pt.header.downloadCv}
+                </span>
+              </div>
               <button type="button" onClick={toggleLocale} className="text-muted cursor-pointer">
                 <span
                   className={`font-bold transition-colors hover:text-accent ${
@@ -80,12 +117,20 @@ export default function Header() {
                 </span>
               </button>
             </div>
-            <a
-              href="#contact"
-              className="font-medium transition-colors hover:text-accent text-[15px]"
-            >
-              {t.header.contact}
-            </a>
+            <div className="grid">
+              <a
+                href="#contact"
+                className="col-start-1 row-start-1 font-medium transition-colors hover:text-accent text-[15px]"
+              >
+                {t.header.contact}
+              </a>
+              <span
+                aria-hidden="true"
+                className="invisible col-start-1 row-start-1 font-medium text-[15px]"
+              >
+                {locale === "pt" ? translations.en.header.contact : translations.pt.header.contact}
+              </span>
+            </div>
           </nav>
 
           <button

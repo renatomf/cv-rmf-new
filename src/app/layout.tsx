@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://renatomf.is-a.dev"),
   title: "Currículo Renato Marques",
   description:
-    "Desenvolvedor Front-End Sênior com +15 anos de experiência em React, Next.js, Angular, TypeScript, React Native e Flutter. Certificado AWS Developer Associate.",
+    "Desenvolvedor Front-End Sênior com +10 anos de experiência em React, Next.js, Angular, TypeScript, React Native e Flutter. Certificado AWS Developer Associate.",
   keywords: [
     "Renato Marques",
     "Desenvolvedor Front-End",

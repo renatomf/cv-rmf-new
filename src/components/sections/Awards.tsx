@@ -1,5 +1,4 @@
 import { Section } from "@/components/sections/Section";
-import { ExternalLinkIcon } from "@/components/ExternalLinkIcon";
 import { useTranslations } from "@/lib/i18n/LocaleContext";
 
 export function Awards({ index }: { index: string }) {
@@ -17,7 +16,6 @@ export function Awards({ index }: { index: string }) {
             <span className="font-medium">{award.title}</span>
             <span className="flex items-center gap-2 text-sm text-muted">
               {award.meta}
-              <ExternalLinkIcon />
             </span>
           </a>
         ))}

@@ -5,11 +5,34 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslations } from "@/lib/i18n/LocaleContext";
 
+function ScrollArrow({ flipped }: { flipped: boolean }) {
+  return (
+    <span
+      className={`inline-flex shrink-0 ${flipped ? "animate-bounce-up" : "animate-bounce-down"}`}
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={`size-3.5 text-accent transition-transform duration-300 ${
+          flipped ? "rotate-180" : ""
+        }`}
+      >
+        <path d="M12 5v14M19 12l-7 7-7-7" />
+      </svg>
+    </span>
+  );
+}
+
 export default function ScrollHero() {
   const t = useTranslations();
   const heroRef = useRef<HTMLElement>(null);
   const [viewport, setViewport] = useState({ width: 1920, height: 1080 });
   const [pastExperience, setPastExperience] = useState(false);
+  const [atPageBottom, setAtPageBottom] = useState(false);
   const [ready, setReady] = useState(false);
   const rafRef = useRef<number | null>(null);
 
@@ -24,12 +47,20 @@ export default function ScrollHero() {
   useEffect(() => {
     const handleScroll = () => {
       const experienceEl = document.getElementById("experience");
-      if (!experienceEl) return;
-      setPastExperience(experienceEl.getBoundingClientRect().top <= 800);
+      if (experienceEl) {
+        setPastExperience(experienceEl.getBoundingClientRect().top <= 800);
+      }
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24;
+      setAtPageBottom(scrolledToBottom);
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -94,12 +125,12 @@ export default function ScrollHero() {
           className="absolute overflow-hidden"
         >
           <Image
-            src="/image-4.png"
+            src="/images/image-15.png"
             alt=""
             fill
             priority
             sizes="(min-width: 768px) 35vw, 100vw"
-            className="object-cover object-[center_43%] md:object-[100%_43%] lg:object-[center_43%]"
+            className="object-cover object-[center_43%] md:object-[100%_43%] lg:object-[center_42%]"
 
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -136,11 +167,11 @@ export default function ScrollHero() {
         <div className="@container relative mx-auto flex w-full max-w-353 flex-1 flex-col justify-between px-4 md:px-10">
           <div className="flex justify-end pt-34 opacity-0 md:opacity-100 lg:-mr-6">
             <p className="max-w-xs text-start text-sm font-bold uppercase leading-5 md:max-w-xs md:text-[15px] md:pl-4">
-              &ldquo;{t.hero.quote}&rdquo;
+              &ldquo; {t.hero.quote} &rdquo;
             </p>
           </div>
 
-          <div className="mt-16 mb-30 md:mb-0 md:mt-24">
+          <div className="mt-16 mb-[8vh] md:mb-0 md:mt-24">
             <div className="font-bold text-accent text-2xl">
               <p>2010→2026</p>
               <p>{t.hero.years}</p>
@@ -148,7 +179,7 @@ export default function ScrollHero() {
 
             <div className="mt-6">
               <h1 className="max-w-3xl text-right font-bold uppercase leading-[0.9] tracking-tight">
-                <span className="block text-right text-[14vw] sm:text-[9vw] md:text-[6.5rem] lg:text-[7.85rem]">
+                <span className="block text-right text-[14.2vw] sm:text-[9vw] md:text-[6.5rem] lg:text-[7.85rem]">
                   Renato
                 </span>
                 <span className="block text-right text-[17vw] sm:text-[13vw] md:text-[8rem] lg:text-[9.5rem]">
@@ -162,22 +193,44 @@ export default function ScrollHero() {
           </div>
         </div>
       </section>
+      
+      <div
+        className="fixed bottom-10 z-20 hidden md:block"
+        style={{ left: "var(--cv-anchor-left, 1.5rem)" }}
+      >
+        {pastExperience ? (
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="flex items-center gap-2 text-xs uppercase tracking-wide text-medium transition-colors hover:text-accent cursor-pointer font-bold"
+          >
+            {t.hero.backToTop}
+            <ScrollArrow flipped />
+          </button>
+        ) : (
+          <span className="flex items-center gap-2 text-xs uppercase tracking-wide text-medium font-bold text-left">
+            {t.hero.scroll}
+            <ScrollArrow flipped={false} />
+          </span>
+        )}
+      </div>
 
-      <div className="fixed inset-x-0 bottom-10 z-20 hidden md:block">
-        <div className="mx-auto flex max-w-228 justify-end px-6 md:px-10">
-          {pastExperience ? (
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="text-xs uppercase tracking-wide text-medium transition-colors hover:text-accent cursor-pointer font-bold"
-            >
-              {t.hero.backToTop}
-            </button>
-          ) : (
-            <span className="text-xs uppercase tracking-wide text-medium font-bold text-lef">
-              {t.hero.scroll}
-            </span>
-          )}
+      {/* Mobile: back-to-top button, shown only once the user has scrolled
+          to the end of the page. */}
+      <div
+        className={`fixed inset-x-0 bottom-6 z-20 transition-opacity duration-300 md:hidden ${
+          atPageBottom ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        <div className="mx-auto flex max-w-348 justify-center px-6 md:px-10">
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="flex items-center gap-2 rounded-full bg-background/90 px-5 py-2.5 text-xs uppercase tracking-wide text-medium backdrop-blur transition-colors hover:text-accent cursor-pointer font-bold"
+          >
+            {t.hero.backToTop}
+            <ScrollArrow flipped />
+          </button>
         </div>
       </div>
     </div>

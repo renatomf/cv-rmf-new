@@ -7,7 +7,7 @@ import { Experience } from "@/components/sections/Experience";
 import { Skills } from "@/components/sections/Skills";
 import { Education } from "@/components/sections/Education";
 import { Languages } from "@/components/sections/Languages";
-import { References } from "@/components/sections/References";
+// import { References } from "@/components/sections/References";
 // import { Awards } from "@/components/sections/Awards";
 // import { Publications } from "@/components/sections/Publications";
 import { Contact } from "@/components/sections/Contact";
@@ -19,7 +19,7 @@ const sections = [
   Skills,
   Education,
   Languages,
-  References,
+  // References,
   // Awards,
   // Publications,
   Contact,
