@@ -11,7 +11,7 @@ export function Contact({ index }: { index: string }) {
       index={index}
       title={t.contact.title}
       footer={
-        <div className="mt-32">
+        <div className="mt-32 pb-24 md:pb-0">
           <p className="wrap-break-word text-[3.3rem] font-extrabold uppercase leading-[0.9] tracking-tight md:text-[7rem] lg:text-[10rem]">
             {t.contact.thanks}
           </p>

@@ -6,7 +6,8 @@
       "contact": "Contato",
       "openMenu": "Abrir menu",
       "closeMenu": "Fechar menu",
-      "mainNav": "Principal"
+      "mainNav": "Principal",
+      "language": "Linguagem"
     },
     "hero": {
       "quote": "Seja desenvolvendo software ou organizando a vida, busco clareza, equilíbrio e impacto duradouro. Acredito que grandes sistemas são construídos com intenção, consistência e atenção aos detalhes.",
@@ -273,7 +274,8 @@
       "contact": "Contact",
       "openMenu": "Open menu",
       "closeMenu": "Close menu",
-      "mainNav": "Main"
+      "mainNav": "Main",
+      "language": "Language"
     },
     "hero": {
       "quote": "Whether building software or organizing life, I look for clarity, balance, and lasting impact. I believe great systems are built with intention, consistency, and attention to detail.",
