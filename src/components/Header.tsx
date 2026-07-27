@@ -123,7 +123,7 @@ export default function Header() {
             aria-label={t.header.mainNav}
             className="hidden flex-col items-start gap-1 text-sm md:flex"
           >
-            <div className="flex items-center gap-6 md:gap-30">
+            <div className="flex items-center gap-6 md:gap-24">
               <div className="grid">
                 <a
                   ref={cvRef}

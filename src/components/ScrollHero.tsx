@@ -167,7 +167,7 @@ export default function ScrollHero() {
         <div className="@container relative mx-auto flex w-full max-w-353 flex-1 flex-col justify-between px-4 md:px-10">
           <div className="flex justify-end pt-34 opacity-0 md:opacity-100 lg:-mr-6">
             <p className="max-w-xs text-start text-sm font-bold uppercase leading-5 md:max-w-xs md:text-[15px] md:pl-4">
-              &ldquo; {t.hero.quote} &rdquo;
+              &ldquo; {t.hero.quote} {" "}&rdquo;
             </p>
           </div>
 
