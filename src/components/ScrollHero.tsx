@@ -153,7 +153,7 @@ export default function ScrollHero() {
         {/* Mobile: static full-bleed image, no scroll animation */}
         <div className="absolute inset-0 overflow-hidden md:hidden">
           <Image
-            src="/image-4.png"
+            src="/images/image-15.png"
             alt=""
             fill
             priority
@@ -186,7 +186,7 @@ export default function ScrollHero() {
                   Marques
                 </span>
               </h1>
-              <p className="mt-6 max-w-md text-medium md:text-medium font-bold ml-3">
+              <p className="mt-6 max-w-lg text-medium md:text-medium font-semibold ml-3">
                 {t.hero.role}
               </p>
             </div>

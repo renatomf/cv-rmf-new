@@ -1,13 +1,10 @@
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer>
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between md:px-10">
-        {/* <div className="flex items-center gap-2">
-          <span className="font-medium text-foreground">Renato Marques</span>
-          <span className="size-1.5 rounded-full bg-accent" />
-          Available for work
-        </div>
-        <span>(UTC–8)</span> */}
+      <div className="mx-auto flex max-w-348 items-center justify-center gap-4 px-6 py-8 text-xs text-muted md:justify-start md:px-10">
+        <span>&copy; {year} Renato Marques</span>
       </div>
     </footer>
   );

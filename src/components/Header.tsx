@@ -64,7 +64,7 @@ export default function Header() {
         }`}
       />
 
-      <header className="fixed inset-x-0 top-0 z-20 h-40 bg-linear-to-b from-black via-black/60 to-transparent">
+      <header className="fixed inset-x-0 top-0 z-20 h-20 bg-linear-to-b from-black via-black/40 to-transparent">
         <div className="mx-auto flex max-w-348 items-start justify-between px-6 py-4 md:px-10">
           <div className="flex flex-col gap-1 text-md font-medium md:flex-row md:items-center md:gap-4">
             <span className="font-semibold tracking-tight">Renato Marques</span>
