@@ -19,7 +19,7 @@
     "about": {
       "title": "sobre",
       "paragraphs": [
-        "Sou **Front-End & Mobile Engineer** com mais de **10 anos de experiência** na criação de aplicações web e mobile escaláveis, performáticas e orientadas ao negócio. Atuo na definição de arquiteturas, padronização técnica e desenvolvimento de produtos digitais que unem qualidade, performance e excelente experiência do usuário.",
+        "Sou **desenvolvedor Front-End & Mobile** com mais de **10 anos de experiência** na criação de aplicações web e mobile escaláveis, performáticas e orientadas ao negócio. Atuo na definição de arquiteturas, padronização técnica e desenvolvimento de produtos digitais que unem qualidade, performance e excelente experiência do usuário.",
         "Especializado em **React, Next.js, TypeScript, React Native e Flutter**, também possuo experiência em back-end, computação em nuvem e integração de Inteligência Artificial ao processo de desenvolvimento, acelerando entregas e elevando a qualidade das soluções.",
         "Acredito que tecnologia de qualidade vai além do código: ela nasce de decisões bem fundamentadas, colaboração e foco em criar produtos que geram impacto real e duradouro."
       ]
@@ -187,7 +187,8 @@
         },
         {
           "meta": "Amazon Web Services (AWS)  •  2023–2024",
-          "title": "AWS Certified Developer – Associate"
+          "title": "AWS Certified Developer – Associate",
+          "file": "aws-certified-developer-associate.pdf"
         }
       ]
     },
@@ -287,7 +288,7 @@
     "about": {
       "title": "about",
       "paragraphs": [
-        "I'm a **Front-End & Mobile Engineer** with more than **10 years of experience** building scalable, high-performance, business-driven web and mobile applications. I work on defining architectures, technical standardization, and building digital products that combine quality, performance, and a great user experience.",
+        "I'm a **Front-End & Mobile Developer** with more than **10 years of experience** building scalable, high-performance, business-driven web and mobile applications. I work on defining architectures, technical standardization, and building digital products that combine quality, performance, and a great user experience.",
         "Specialized in **React, Next.js, TypeScript, React Native, and Flutter**, I also have experience with back-end development, cloud computing, and integrating Artificial Intelligence into the development process, speeding up delivery and raising the quality of solutions.",
         "I believe quality technology goes beyond code: it comes from well-grounded decisions, collaboration, and a focus on building products that create real, lasting impact."
       ]
@@ -455,7 +456,8 @@
         },
         {
           "meta": "Amazon Web Services (AWS)  •  2023–2024",
-          "title": "AWS Certified Developer – Associate"
+          "title": "AWS Certified Developer – Associate",
+          "file": "aws-certified-developer-associate.pdf"
         }
       ]
     },

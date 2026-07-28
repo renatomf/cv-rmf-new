@@ -130,7 +130,7 @@ export default function ScrollHero() {
             fill
             priority
             sizes="(min-width: 768px) 35vw, 100vw"
-            className="object-cover object-[center_43%] md:object-[100%_43%] lg:object-[center_42%]"
+            className="object-cover object-[center_42%] md:object-[120%_42%] lg:object-[center_42%]"
 
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -194,8 +194,28 @@ export default function ScrollHero() {
         </div>
       </section>
       
+      {/* Tablet: docked box hasn't reached its desktop width yet, so anchor
+          to the right edge instead of matching the download-CV column */}
+      <div className="fixed bottom-8 right-10 z-20 hidden md:block lg:hidden">
+        {pastExperience ? (
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="flex items-center gap-2 text-xs uppercase tracking-wide text-medium transition-colors hover:text-accent cursor-pointer font-bold"
+          >
+            {t.hero.backToTop}
+            <ScrollArrow flipped />
+          </button>
+        ) : (
+          <span className="flex items-center gap-2 text-xs uppercase tracking-wide text-medium font-bold text-left">
+            {t.hero.scroll}
+            <ScrollArrow flipped={false} />
+          </span>
+        )}
+      </div>
+
       <div
-        className="fixed bottom-10 z-20 hidden md:block"
+        className="fixed bottom-10 z-20 hidden lg:block"
         style={{ left: "var(--cv-anchor-left, 1.5rem)" }}
       >
         {pastExperience ? (

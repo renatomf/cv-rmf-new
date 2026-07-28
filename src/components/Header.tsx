@@ -61,6 +61,10 @@ export default function Header() {
 
   const toggleLocale = () => setLocale(locale === "pt" ? "en" : "pt");
 
+  const cvFileName =
+    locale === "pt" ? "curriculo_renato_impresso-PT.pdf" : "curriculo_renato_impresso-EN.pdf";
+  const cvHref = `/pdf/${cvFileName}`;
+
   useEffect(() => {
     if (!open) return;
     const previousOverflow = document.body.style.overflow;
@@ -127,7 +131,8 @@ export default function Header() {
               <div className="grid">
                 <a
                   ref={cvRef}
-                  href="#"
+                  href={cvHref}
+                  download={cvFileName}
                   className="col-start-1 row-start-1 flex items-center gap-1.5 font-medium text-[15px] transition-colors hover:text-accent"
                 >
                   <DownloadIcon />
@@ -202,7 +207,8 @@ export default function Header() {
           }`}
         >
           <a
-            href="#"
+            href={cvHref}
+            download={cvFileName}
             onClick={() => setOpen(false)}
             className="flex items-center gap-2 rounded-xl py-3 font-medium transition-colors hover:text-accent"
           >
