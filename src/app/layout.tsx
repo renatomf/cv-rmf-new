@@ -12,14 +12,21 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rmf-dev.com.br"),
-  title: "Currículo Renato Marques",
+  title: "Renato Marques — Desenvolvedor Front-End Sênior & Tech Lead",
   description:
-    "Desenvolvedor Front-End Sênior com +10 anos de experiência em React, Next.js, Angular, TypeScript, React Native e Flutter. Certificado AWS Developer Associate.",
+    "Desenvolvedor Front-End Sênior e Tech Lead com +10 anos de experiência em React, Next.js, TypeScript, arquitetura Front-End e liderança técnica. Certificado AWS Developer Associate.",
   keywords: [
     "Renato Marques",
     "Desenvolvedor Front-End",
     "Desenvolvedor Full Stack",
     "Front-End Sênior",
+    "Tech Lead",
+    "Liderança Técnica",
+    "Mentoria Técnica",
+    "Arquitetura de Software",
+    "Arquitetura Front-End",
+    "Design Systems",
+    "Code Review",
     "ReactJS",
     "NextJS",
     "Angular",
@@ -64,6 +71,16 @@ export const metadata: Metadata = {
     "Docker",
     "Kubernetes",
     "CI/CD",
+    "SSR",
+    "React Server Components",
+    "Monorepos",
+    "Vercel",
+    "Web Performance",
+    "Jest",
+    "Vitest",
+    "Cypress",
+    "Playwright",
+    "Sentry",
   ],
   applicationName: "Currículo Renato Marques",
   authors: [
@@ -81,20 +98,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://rmf-dev.com.br",
-    title: "Currículo Renato Marques",
+    title: "Renato Marques — Desenvolvedor Front-End Sênior & Tech Lead",
     description:
-      "Currículo online de Renato Marques — experiência, habilidades técnicas, educação e contato.",
+      "Currículo online de Renato Marques — experiência como Tech Lead, habilidades técnicas, educação e contato.",
     siteName: "Currículo Renato Marques",
     locale: "pt_BR",
     alternateLocale: ["en_US"],
-    images: [{ url: "/images/image-og.png", width: 1200, height: 630 }],
+    images: [{ url: "/images/image-og.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Currículo Renato Marques",
+    title: "Renato Marques — Desenvolvedor Front-End Sênior & Tech Lead",
     description:
-      "Currículo online de Renato Marques — experiência, habilidades técnicas, educação e contato.",
-    images: ["/images/image-og.png"],
+      "Currículo online de Renato Marques — experiência como Tech Lead, habilidades técnicas, educação e contato.",
+    images: ["/images/image-og.jpg"],
   },
   alternates: {
     canonical: "https://rmf-dev.com.br",
