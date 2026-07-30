@@ -11,8 +11,14 @@ const LocaleContext = createContext<{
   setLocale: (locale: Locale) => void;
 } | null>(null);
 
-export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("pt");
+export function LocaleProvider({
+  children,
+  initialLocale = "pt",
+}: {
+  children: React.ReactNode;
+  initialLocale?: Locale;
+}) {
+  const [locale, setLocale] = useState<Locale>(initialLocale);
 
   const value = useMemo(() => ({ locale, setLocale }), [locale]);
 

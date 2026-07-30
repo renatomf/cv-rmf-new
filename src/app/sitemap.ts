@@ -7,6 +7,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
+      alternates: {
+        languages: {
+          "pt-BR": "https://rmf-dev.com.br",
+          "en-US": "https://rmf-dev.com.br/en",
+        },
+      },
+    },
+    {
+      url: "https://rmf-dev.com.br/en",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
+      alternates: {
+        languages: {
+          "pt-BR": "https://rmf-dev.com.br",
+          "en-US": "https://rmf-dev.com.br/en",
+        },
+      },
     },
   ];
 }

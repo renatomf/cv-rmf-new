@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { sendContactMessage, type ContactFormState } from "@/app/actions/contact";
 import { useTranslations } from "@/lib/i18n/LocaleContext";
@@ -30,6 +30,7 @@ function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: st
         strokeLinecap="round"
         strokeLinejoin="round"
         className="size-4 transition-transform group-hover:translate-x-1"
+        aria-hidden="true"
       >
         <path d="M5 12h14M13 5l7 7-7 7" />
       </svg>
@@ -40,6 +41,13 @@ function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: st
 export function ContactForm() {
   const t = useTranslations();
   const [state, formAction] = useActionState(sendContactMessage, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state.status === "success") {
+      formRef.current?.reset();
+    }
+  }, [state]);
 
   const feedback =
     state.status === "success"
@@ -50,12 +58,12 @@ export function ContactForm() {
 
   return (
     <div>
-      <p className="text-xl font-extrabold uppercase tracking-tight md:text-2xl">
+      <h3 className="text-xl font-extrabold uppercase tracking-tight md:text-2xl">
         {t.contact.form.heading}
-      </p>
+      </h3>
       <p className="mt-2 max-w-sm text-sm text-muted">{t.contact.form.subheading}</p>
 
-      <form action={formAction} className="mt-8 flex flex-col gap-5">
+      <form ref={formRef} action={formAction} className="mt-8 flex flex-col gap-5">
         <input
           type="text"
           name="company"
@@ -93,7 +101,7 @@ export function ContactForm() {
 
         {feedback && (
           <p
-            role="status"
+            role={state.status === "error" ? "alert" : "status"}
             className={`text-sm font-bold ${state.status === "success" ? "text-accent" : "text-muted"}`}
           >
             {feedback}

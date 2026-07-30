@@ -20,6 +20,7 @@ function ScrollArrow({ flipped }: { flipped: boolean }) {
         className={`size-3.5 text-accent transition-transform duration-300 ${
           flipped ? "rotate-180" : ""
         }`}
+        aria-hidden="true"
       >
         <path d="M12 5v14M19 12l-7 7-7-7" />
       </svg>
@@ -158,7 +159,7 @@ export default function ScrollHero() {
             alt=""
             fill
             priority
-            sizes="100vw"
+            sizes="120vw"
             className="object-cover object-center scale-120"
           />
           <div className="absolute inset-0 bg-black/40" />

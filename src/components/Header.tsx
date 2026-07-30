@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "@/lib/i18n/LocaleContext";
 import translations from "@/data/translations.json";
 
@@ -14,6 +15,7 @@ function DownloadIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
       className="size-4 shrink-0"
+      aria-hidden="true"
     >
       <path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16" />
     </svg>
@@ -30,6 +32,7 @@ function ContactIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
       className="size-4 shrink-0"
+      aria-hidden="true"
     >
       <rect x="3" y="5" width="18" height="14" rx="2" />
       <path d="m3 7 9 6 9-6" />
@@ -39,7 +42,7 @@ function ContactIcon() {
 
 function MenuIcon({ open }: { open: boolean }) {
   return (
-    <svg viewBox="0 0 24 24" className="size-8 translate-x-1.5" fill="currentColor">
+    <svg viewBox="0 0 24 24" className="size-8 translate-x-1.5" fill="currentColor" aria-hidden="true">
       {open ? (
         <path d="M6.4 4.98 4.98 6.4 10.59 12l-5.61 5.6 1.42 1.42L12 13.41l5.6 5.61 1.42-1.42L13.41 12l5.61-5.6-1.42-1.42L12 10.59Z" />
       ) : (
@@ -55,11 +58,15 @@ function MenuIcon({ open }: { open: boolean }) {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const { locale, setLocale } = useLocale();
+  const { locale } = useLocale();
   const t = useTranslations();
   const cvRef = useRef<HTMLAnchorElement>(null);
+  const router = useRouter();
 
-  const toggleLocale = () => setLocale(locale === "pt" ? "en" : "pt");
+  const toggleLocale = () => {
+    const target = locale === "pt" ? "/en" : "/";
+    router.push(target);
+  };
 
   const cvFileName =
     locale === "pt" ? "curriculo_renato_impresso-PT.pdf" : "curriculo_renato_impresso-EN.pdf";

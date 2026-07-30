@@ -1,5 +1,3 @@
-"use client";
-
 import Header from "@/components/Header";
 // import Footer from "@/components/Footer";
 import { About } from "@/components/sections/About";
@@ -33,7 +31,7 @@ export default function Home() {
         <ScrollHero />
         {sections.map((SectionComponent, i) => (
           <SectionComponent
-            key={SectionComponent.name}
+            key={i}
             index={`${String(i + 1).padStart(2, "0")}.`}
           />
         ))}
