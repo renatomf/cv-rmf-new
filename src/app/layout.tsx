@@ -12,7 +12,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rmf-dev.com.br"),
-  title: "Renato Marques — Desenvolvedor Front-End Sênior & Tech Lead",
+  title: "Renato Marques — Desenvolvedor Front-End Sênior",
   description:
     "Desenvolvedor Front-End Sênior e Tech Lead com +10 anos de experiência em React, Next.js e TypeScript. Certificado AWS Developer Associate.",
   keywords: [
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://rmf-dev.com.br",
-    title: "Renato Marques — Desenvolvedor Front-End Sênior & Tech Lead",
+    title: "Renato Marques — Desenvolvedor Front-End Sênior",
     description:
       "Currículo online de Renato Marques — experiência como Tech Lead, habilidades técnicas, educação e contato.",
     siteName: "Currículo Renato Marques",
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Renato Marques — Desenvolvedor Front-End Sênior & Tech Lead",
+    title: "Renato Marques — Desenvolvedor Front-End Sênior",
     description:
       "Currículo online de Renato Marques — experiência como Tech Lead, habilidades técnicas, educação e contato.",
     images: ["/images/image-og.jpg"],
