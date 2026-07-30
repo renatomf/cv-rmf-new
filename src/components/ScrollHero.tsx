@@ -125,12 +125,13 @@ export default function ScrollHero() {
           className="absolute overflow-hidden"
         >
           <Image
-            src="/images/image-15.png"
+            src="/images/image-5.png"
             alt=""
             fill
             priority
             sizes="(min-width: 768px) 35vw, 100vw"
-            className="object-cover object-[center_42%] md:object-[120%_42%] lg:object-[center_42%]"
+            className="object-cover object-[center_42
+            %] md:object-[120%_42%] lg:object-[center_42%]"
 
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -153,7 +154,7 @@ export default function ScrollHero() {
         {/* Mobile: static full-bleed image, no scroll animation */}
         <div className="absolute inset-0 overflow-hidden md:hidden">
           <Image
-            src="/images/image-15.png"
+            src="/images/image-5.png"
             alt=""
             fill
             priority
@@ -178,7 +179,7 @@ export default function ScrollHero() {
             </div>
 
             <div className="mt-6">
-              <h1 className="max-w-3xl text-right font-bold uppercase leading-[0.9] tracking-tight">
+              <h1 className="max-w-3xl text-right font-bold uppercase leading-[0.85] tracking-tight">
                 <span className="block text-right text-[14.2vw] sm:text-[9vw] md:text-[6.5rem] lg:text-[7.85rem]">
                   Renato
                 </span>

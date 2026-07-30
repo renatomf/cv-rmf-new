@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { LocaleProvider } from "@/lib/i18n/LocaleContext";
 import "./globals.css";
@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://renatomf.is-a.dev"),
+  metadataBase: new URL("https://rmf-dev.com.br"),
   title: "Currículo Renato Marques",
   description:
     "Desenvolvedor Front-End Sênior com +10 anos de experiência em React, Next.js, Angular, TypeScript, React Native e Flutter. Certificado AWS Developer Associate.",
@@ -65,40 +65,52 @@ export const metadata: Metadata = {
     "Kubernetes",
     "CI/CD",
   ],
-  authors: [{ name: "Renato Marques" }],
+  applicationName: "Currículo Renato Marques",
+  authors: [
+    { name: "Renato Marques", url: "https://www.linkedin.com/in/renatomf/" },
+  ],
   creator: "Renato Marques",
   publisher: "Renato Marques",
+  category: "portfolio",
+  formatDetection: {
+    telephone: false,
+  },
   verification: {
-    google: "qaMymppOzfE3hEXNeBfSm2pQgDnQAee7hojMlTTU2Vw",
+    google: "1_xz8MZn0iG7RZ1fOq8R_Oe7ukgOeMl97p0wyfFraxQ",
   },
   openGraph: {
     type: "website",
-    url: "https://renatomf.is-a.dev",
+    url: "https://rmf-dev.com.br",
     title: "Currículo Renato Marques",
     description:
       "Currículo online de Renato Marques — experiência, habilidades técnicas, educação e contato.",
     siteName: "Currículo Renato Marques",
     locale: "pt_BR",
-    images: [{ url: "/image-4.png", width: 1240, height: 1268 }],
+    alternateLocale: ["en_US"],
+    images: [{ url: "/images/image-og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Currículo Renato Marques",
     description:
       "Currículo online de Renato Marques — experiência, habilidades técnicas, educação e contato.",
-    images: ["/image-4.png"],
+    images: ["/images/image-og.png"],
   },
   alternates: {
-    canonical: "https://renatomf.is-a.dev",
+    canonical: "https://rmf-dev.com.br",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
 };
 
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Renato Marques",
-  url: "https://renatomf.is-a.dev",
-  image: "https://renatomf.is-a.dev/image-4.png",
+  url: "https://rmf-dev.com.br",
+  image: "https://rmf-dev.com.br/images/image-5.png",
   jobTitle: "Desenvolvedor Front-End Sênior",
   worksFor: {
     "@type": "Organization",

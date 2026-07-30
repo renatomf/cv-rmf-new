@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://renatomf.is-a.dev/sitemap.xml",
+    sitemap: "https://rmf-dev.com.br/sitemap.xml",
   };
 }
