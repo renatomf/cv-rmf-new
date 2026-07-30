@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rmf-dev.com.br"),
   title: "Renato Marques — Desenvolvedor Front-End Sênior & Tech Lead",
   description:
-    "Desenvolvedor Front-End Sênior e Tech Lead com +10 anos de experiência em React, Next.js, TypeScript, arquitetura Front-End e liderança técnica. Certificado AWS Developer Associate.",
+    "Desenvolvedor Front-End Sênior e Tech Lead com +10 anos de experiência em React, Next.js e TypeScript. Certificado AWS Developer Associate.",
   keywords: [
     "Renato Marques",
     "Desenvolvedor Front-End",
