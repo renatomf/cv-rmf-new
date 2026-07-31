@@ -19,7 +19,7 @@ function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: st
     <button
       type="submit"
       disabled={pending}
-      className="group mt-2 flex w-full items-center justify-center gap-2 rounded-md bg-accent px-3.5 py-1.5 font-extrabold text-xs text-black uppercase tracking-tight transition-opacity hover:opacity-85 disabled:opacity-50 cursor-pointer sm:w-fit sm:self-end"
+      className="group mt-2 flex w-full items-center justify-center gap-2 rounded-md bg-accent px-3.5 py-3 font-extrabold text-xs text-black uppercase tracking-tight transition-opacity hover:opacity-85 disabled:opacity-50 cursor-pointer sm:w-fit sm:self-end sm:py-1.5"
     >
       {pending ? pendingLabel : label}
       <svg
