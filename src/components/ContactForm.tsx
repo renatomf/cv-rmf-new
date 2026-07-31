@@ -8,9 +8,9 @@ import { useTranslations } from "@/lib/i18n/LocaleContext";
 const initialState: ContactFormState = { status: "idle" };
 
 const fieldClasses =
-  "w-full rounded-md border border-line/15 bg-foreground/5 px-4 py-3 font-semibold text-base outline-none transition-colors placeholder:font-normal placeholder:text-muted focus:border-accent/60 focus:bg-foreground/8";
+  "w-full rounded-md border border-line/30 bg-foreground/5 px-3.5 py-2.5 font-semibold text-xs outline-none transition-colors placeholder:font-normal placeholder:text-xs placeholder:text-muted/70 focus:border-accent/60 focus:bg-foreground/8";
 
-const labelClasses = "text-xs font-bold uppercase tracking-wide text-muted";
+const labelClasses = "text-[10px] font-bold uppercase tracking-wide text-muted";
 
 function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: string }) {
   const { pending } = useFormStatus();
@@ -19,7 +19,7 @@ function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: st
     <button
       type="submit"
       disabled={pending}
-      className="group mt-2 flex w-full items-center justify-center gap-2.5 rounded-md bg-accent px-4 py-2 font-extrabold text-xs text-black uppercase tracking-tight transition-opacity hover:opacity-85 disabled:opacity-50 cursor-pointer sm:w-fit sm:self-end"
+      className="group mt-2 flex w-full items-center justify-center gap-2 rounded-md bg-accent px-3.5 py-1.5 font-extrabold text-xs text-black uppercase tracking-tight transition-opacity hover:opacity-85 disabled:opacity-50 cursor-pointer sm:w-fit sm:self-end"
     >
       {pending ? pendingLabel : label}
       <svg
@@ -29,7 +29,7 @@ function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: st
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="size-4 transition-transform group-hover:translate-x-1"
+        className="size-3.5 transition-transform group-hover:translate-x-1"
         aria-hidden="true"
       >
         <path d="M5 12h14M13 5l7 7-7 7" />
@@ -38,14 +38,23 @@ function SubmitButton({ label, pendingLabel }: { label: string; pendingLabel: st
   );
 }
 
+function autoResize(el: HTMLTextAreaElement) {
+  el.style.height = "auto";
+  el.style.height = `${el.scrollHeight}px`;
+}
+
 export function ContactForm() {
   const t = useTranslations();
   const [state, formAction] = useActionState(sendContactMessage, initialState);
   const formRef = useRef<HTMLFormElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     if (state.status === "success") {
       formRef.current?.reset();
+      if (messageRef.current) {
+        messageRef.current.style.height = "";
+      }
     }
   }, [state]);
 
@@ -58,10 +67,10 @@ export function ContactForm() {
 
   return (
     <div>
-      <h3 className="text-xl font-extrabold uppercase tracking-tight md:text-2xl">
+      <h3 className="text-lg font-extrabold uppercase tracking-tight md:text-xl">
         {t.contact.form.heading}
       </h3>
-      <p className="mt-2 max-w-sm text-sm text-muted">{t.contact.form.subheading}</p>
+      <p className="mt-2 max-w-sm text-xs text-muted">{t.contact.form.subheading}</p>
 
       <form ref={formRef} action={formAction} className="mt-8 flex flex-col gap-5">
         <input
@@ -76,13 +85,13 @@ export function ContactForm() {
           <label htmlFor="contact-name" className={labelClasses}>
             {t.contact.form.nameLabel}
           </label>
-          <input id="contact-name" name="name" type="text" required className={`mt-2 h-10 ${fieldClasses}`} />
+          <input id="contact-name" name="name" type="text" required className={`mt-2 h-9 ${fieldClasses}`} />
         </div>
         <div>
           <label htmlFor="contact-email" className={labelClasses}>
             {t.contact.form.emailLabel}
           </label>
-          <input id="contact-email" name="email" type="email" required className={`mt-2 h-10 ${fieldClasses}`} />
+          <input id="contact-email" name="email" type="email" required className={`mt-2 h-9 ${fieldClasses}`} />
         </div>
         <div>
           <label htmlFor="contact-message" className={labelClasses}>
@@ -92,8 +101,10 @@ export function ContactForm() {
             id="contact-message"
             name="message"
             required
-            rows={4}
-            className={`mt-2 resize-none ${fieldClasses}`}
+            rows={5}
+            ref={messageRef}
+            onInput={(e) => autoResize(e.currentTarget)}
+            className={`mt-2 resize-none overflow-hidden ${fieldClasses}`}
           />
         </div>
 

@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { motion, useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "@/lib/i18n/LocaleContext";
+import { useIntro } from "@/lib/intro/IntroContext";
 import translations from "@/data/translations.json";
 
 function DownloadIcon() {
@@ -40,6 +41,46 @@ function ContactIcon() {
   );
 }
 
+// Renders the real link plus an invisible copy holding the other locale's
+// label, overlapped via grid, so the link's width already fits the longer
+// of the two translations — switching locale doesn't resize/shift it.
+function StableWidthNavLink({
+  linkRef,
+  href,
+  download,
+  icon,
+  label,
+  otherLocaleLabel,
+}: {
+  linkRef?: React.Ref<HTMLAnchorElement>;
+  href: string;
+  download?: string;
+  icon: React.ReactNode;
+  label: string;
+  otherLocaleLabel: string;
+}) {
+  return (
+    <div className="grid">
+      <a
+        ref={linkRef}
+        href={href}
+        download={download}
+        className="col-start-1 row-start-1 flex items-center gap-1.5 font-medium text-[15px] transition-colors hover:text-accent"
+      >
+        {icon}
+        {label}
+      </a>
+      <span
+        aria-hidden="true"
+        className="invisible col-start-1 row-start-1 flex items-center gap-1.5 font-medium text-[15px]"
+      >
+        {icon}
+        {otherLocaleLabel}
+      </span>
+    </div>
+  );
+}
+
 function MenuIcon({ open }: { open: boolean }) {
   return (
     <svg viewBox="0 0 24 24" className="size-8 translate-x-1.5" fill="currentColor" aria-hidden="true">
@@ -58,15 +99,32 @@ function MenuIcon({ open }: { open: boolean }) {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const { locale } = useLocale();
+  const { locale, setLocale } = useLocale();
   const t = useTranslations();
   const cvRef = useRef<HTMLAnchorElement>(null);
-  const router = useRouter();
+  const { heroIntroDone } = useIntro();
+  const prefersReducedMotion = useReducedMotion();
+
+  const applyLocale = (nextLocale: "pt" | "en") => {
+    setLocale(nextLocale);
+    document.documentElement.lang = translations[nextLocale].meta.htmlLang;
+    document.title = translations[nextLocale].meta.title;
+  };
 
   const toggleLocale = () => {
-    const target = locale === "pt" ? "/en" : "/";
-    router.push(target);
+    const nextLocale = locale === "pt" ? "en" : "pt";
+    applyLocale(nextLocale);
+    window.history.pushState(null, "", nextLocale === "pt" ? "/" : "/en");
   };
+
+  useEffect(() => {
+    const onPopState = () => {
+      applyLocale(window.location.pathname.startsWith("/en") ? "en" : "pt");
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const cvFileName =
     locale === "pt" ? "curriculo_renato_impresso-PT.pdf" : "curriculo_renato_impresso-EN.pdf";
@@ -79,6 +137,15 @@ export default function Header() {
     return () => {
       document.body.style.overflow = previousOverflow;
     };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
   // Publishes the "download cv" link's viewport x-position as a CSS variable so
@@ -117,7 +184,14 @@ export default function Header() {
         }`}
       />
 
-      <header className="fixed inset-x-0 top-0 z-20 h-36 md:h-20 bg-linear-to-b from-black via-black/40 to-transparent">
+      <motion.header
+        initial={{ opacity: 0 }}
+        animate={{ opacity: heroIntroDone ? 1 : 0 }}
+        transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
+        className={`fixed inset-x-0 top-0 z-20 h-36 md:h-20 bg-linear-to-b from-black via-black/40 to-transparent ${
+          heroIntroDone ? "" : "pointer-events-none"
+        }`}
+      >
         <div className="mx-auto flex max-w-348 items-start justify-between px-6 py-4 md:px-10">
           <div className="flex flex-col gap-1 text-md font-medium md:flex-row md:items-center md:gap-4">
             <span className="font-semibold tracking-tight">Renato Marques</span>
@@ -135,27 +209,19 @@ export default function Header() {
             className="hidden flex-col items-start gap-1 text-sm md:flex"
           >
             <div className="flex items-center gap-6 md:gap-24">
-              <div className="grid">
-                <a
-                  ref={cvRef}
-                  href={cvHref}
-                  download={cvFileName}
-                  className="col-start-1 row-start-1 flex items-center gap-1.5 font-medium text-[15px] transition-colors hover:text-accent"
-                >
-                  <DownloadIcon />
-                  {t.header.downloadCv}
-                </a>
-                <span
-                  aria-hidden="true"
-                  className="invisible col-start-1 row-start-1 flex items-center gap-1.5 font-medium text-[15px]"
-                >
-                  <DownloadIcon />
-                  {locale === "pt"
+              <StableWidthNavLink
+                linkRef={cvRef}
+                href={cvHref}
+                download={cvFileName}
+                icon={<DownloadIcon />}
+                label={t.header.downloadCv}
+                otherLocaleLabel={
+                  locale === "pt"
                     ? translations.en.header.downloadCv
-                    : translations.pt.header.downloadCv}
-                </span>
-              </div>
-              <button type="button" onClick={toggleLocale} className="text-muted cursor-pointer">
+                    : translations.pt.header.downloadCv
+                }
+              />
+              <button type="button" onClick={toggleLocale} className="text-xs text-muted cursor-pointer">
                 <span
                   className={`font-bold transition-colors hover:text-accent ${
                     locale === "pt" ? "text-accent" : ""
@@ -173,22 +239,14 @@ export default function Header() {
                 </span>
               </button>
             </div>
-            <div className="grid">
-              <a
-                href="#contact"
-                className="col-start-1 row-start-1 flex items-center gap-1.5 font-medium transition-colors hover:text-accent text-[15px]"
-              >
-                <ContactIcon />
-                {t.header.contact}
-              </a>
-              <span
-                aria-hidden="true"
-                className="invisible col-start-1 row-start-1 flex items-center gap-1.5 font-medium text-[15px]"
-              >
-                <ContactIcon />
-                {locale === "pt" ? translations.en.header.contact : translations.pt.header.contact}
-              </span>
-            </div>
+            <StableWidthNavLink
+              href="#contact"
+              icon={<ContactIcon />}
+              label={t.header.contact}
+              otherLocaleLabel={
+                locale === "pt" ? translations.en.header.contact : translations.pt.header.contact
+              }
+            />
           </nav>
 
           <button
@@ -197,7 +255,7 @@ export default function Header() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? t.header.closeMenu : t.header.openMenu}
-            className="relative z-20 flex size-10 items-center justify-center rounded-full text-foreground transition-colors hover:text-accent md:hidden"
+            className="relative z-20 flex size-10 items-center justify-center rounded-full text-foreground transition-colors hover:text-accent outline-none md:hidden"
           >
             <MenuIcon open={open} />
           </button>
@@ -207,7 +265,7 @@ export default function Header() {
           id="mobile-menu"
           aria-label={t.header.mainNav}
           aria-hidden={!open}
-          className={`relative z-20 mx-6 mt-2 flex flex-col items-start gap-1 p-2 text-sm transition-all duration-300 ease-out md:hidden ${
+          className={`relative z-20 mx-6 mt-2 flex flex-col items-start gap-1 py-2 text-sm transition-all duration-300 ease-out md:hidden ${
             open
               ? "pointer-events-auto translate-y-0 opacity-100"
               : "pointer-events-none -translate-y-2 opacity-0"
@@ -230,7 +288,7 @@ export default function Header() {
             <ContactIcon />
             {t.header.contact}
           </a>
-          <div className="mt-2 flex w-full items-center justify-between py-3">
+          <div className="mt-2 flex w-full items-center justify-between py-2">
             <span className="font-medium">{t.header.language}</span>
             <button
               type="button"
@@ -262,7 +320,7 @@ export default function Header() {
             </button>
           </div>
         </nav>
-      </header>
+      </motion.header>
     </>
   );
 }

@@ -12,7 +12,7 @@ export function Skills({ index }: { index: string }) {
         {t.skills.items.map((skill) => (
           <span
             key={skill}
-            className="rounded-md border border-line px-4 py-1 text-sm"
+            className="rounded-md border border-line/40 px-4 py-1 text-sm"
           >
             {skill}
           </span>

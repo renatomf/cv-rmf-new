@@ -26,7 +26,12 @@ export function Contact({ index }: { index: string }) {
       <div className="flex flex-col gap-8">
         <div>
           <p className="text-sm text-muted">{t.contact.phoneLabel}</p>
-          <a href="https://wa.me/5511972550341" className="mt-1 block font-extrabold text-xl hover:text-accent">
+          <a
+            href="https://wa.me/5511972550341"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 block font-extrabold text-xl hover:text-accent"
+          >
             +55 11 97255-0341
           </a>
         </div>
@@ -41,17 +46,27 @@ export function Contact({ index }: { index: string }) {
         </div>
         <div>
           <p className="text-sm text-muted">{t.contact.linkedinLabel}</p>
-          <a href="https://www.linkedin.com/in/renatomf/" className="mt-1 block font-extrabold text-xl hover:text-accent">
+          <a
+            href="https://www.linkedin.com/in/renatomf/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 block font-extrabold text-xl hover:text-accent"
+          >
             linkedin.com/in/renatomf
           </a>
         </div>
         <div>
           <p className="text-sm text-muted">{t.contact.githubLabel}</p>
-          <a href="https://github.com/renatomf" className="mt-1 block font-extrabold text-xl hover:text-accent">
+          <a
+            href="https://github.com/renatomf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 block font-extrabold text-xl hover:text-accent"
+          >
             github.com/renatomf
           </a>
         </div>
-        <div className="mt-12 border-t border-line pt-20">
+        <div className="mt-12 border-t border-line/40 pt-20">
           <ContactForm />
         </div>
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { LocaleProvider } from "@/lib/i18n/LocaleContext";
+import { IntroProvider } from "@/lib/intro/IntroContext";
 import translations from "@/data/translations.json";
 import "../globals.css";
 
@@ -120,7 +121,9 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-        <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
+        <LocaleProvider initialLocale={locale}>
+          <IntroProvider>{children}</IntroProvider>
+        </LocaleProvider>
       </body>
     </html>
   );

@@ -1,15 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useTranslations } from "@/lib/i18n/LocaleContext";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { useLocale, useTranslations } from "@/lib/i18n/LocaleContext";
+import { useHeroDock } from "@/hooks/useHeroDock";
+import { useHeroIntroSequence } from "@/hooks/useHeroIntroSequence";
+import FadeUpWords from "@/components/FadeUpWords";
+
+// Smooth, non-snappy ease-out used across the hero's entrance sequence.
+const SOFT_EASE = [0.33, 1, 0.68, 1] as const;
 
 function ScrollArrow({ flipped }: { flipped: boolean }) {
   return (
-    <span
-      className={`inline-flex shrink-0 ${flipped ? "animate-bounce-up" : "animate-bounce-down"}`}
-    >
+    <span className="inline-flex shrink-0 animate-blink">
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -28,22 +32,61 @@ function ScrollArrow({ flipped }: { flipped: boolean }) {
   );
 }
 
+function ScrollHint({
+  className,
+  style,
+  pastExperience,
+  scroll,
+  backToTop,
+  onBackToTop,
+}: {
+  className: string;
+  style?: React.CSSProperties;
+  pastExperience: boolean;
+  scroll: string;
+  backToTop: string;
+  onBackToTop: () => void;
+}) {
+  return (
+    <div className={className} style={style}>
+      {pastExperience ? (
+        <button
+          type="button"
+          onClick={onBackToTop}
+          className="flex items-center gap-2 text-xs uppercase tracking-wide text-muted transition-colors hover:text-accent cursor-pointer font-bold"
+        >
+          {backToTop}
+          <ScrollArrow flipped />
+        </button>
+      ) : (
+        <span className="flex items-center gap-2 text-xs uppercase tracking-wide text-muted font-bold text-left">
+          {scroll}
+          <ScrollArrow flipped={false} />
+        </span>
+      )}
+    </div>
+  );
+}
+
 export default function ScrollHero() {
   const t = useTranslations();
+  const { locale } = useLocale();
   const heroRef = useRef<HTMLElement>(null);
-  const [viewport, setViewport] = useState({ width: 1920, height: 1080 });
   const [pastExperience, setPastExperience] = useState(false);
   const [atPageBottom, setAtPageBottom] = useState(false);
-  const [ready, setReady] = useState(false);
-  const rafRef = useRef<number | null>(null);
 
-  useLayoutEffect(() => {
-    const update = () =>
-      setViewport({ width: window.innerWidth, height: window.innerHeight });
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
+  const { ready, width, overlayOpacity, edgeFadeOpacity } = useHeroDock(heroRef);
+  const {
+    prefersReducedMotion,
+    headingDone,
+    quoteDone,
+    yearsLine1Done,
+    roleDone,
+    onHeadingComplete,
+    onQuoteComplete,
+    onYearsLine1Complete,
+    onRoleComplete,
+  } = useHeroIntroSequence();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,50 +111,6 @@ export default function ScrollHero() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Docked box stays flush top/right/bottom (full height, no vertical inset) —
-  // only the width narrows as it slides right.
-  const dockWidth = viewport.width * 0.35;
-
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-
-  useLayoutEffect(() => {
-    let progress = 0;
-    if (heroRef.current) {
-      const rect = heroRef.current.getBoundingClientRect();
-      if (rect.height > 0) {
-        progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
-      }
-    }
-
-    if (progress === 0) {
-      // Default motion values already match an unscrolled page — nothing to
-      // correct, so reveal immediately instead of waiting on extra frames.
-      setReady(true);
-      return;
-    }
-
-    scrollYProgress.jump(progress);
-
-    // Reloading mid-scroll needs a couple of frames for framer-motion's own
-    // render step (scheduled via rAF) to apply the jumped value to the DOM —
-    // otherwise the very first paint shows the pre-jump (full-width) frame.
-    const raf1 = requestAnimationFrame(() => {
-      const raf2 = requestAnimationFrame(() => setReady(true));
-      rafRef.current = raf2;
-    });
-    rafRef.current = raf1;
-    return () => {
-      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-    };
-  }, [scrollYProgress]);
-
-  const width = useTransform(scrollYProgress, [0, 1], [viewport.width, dockWidth]);
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.3, 0]);
-  const edgeFadeOpacity = useTransform(scrollYProgress, [0, 1], [1, 1]);
-
   return (
     <div className="relative">
       {/* Desktop/tablet: image slides + docks flush to the right as you scroll past the hero,
@@ -131,9 +130,7 @@ export default function ScrollHero() {
             fill
             priority
             sizes="(min-width: 768px) 35vw, 100vw"
-            className="object-cover object-[center_42
-            %] md:object-[120%_42%] lg:object-[center_42%]"
-
+            className="object-cover object-[center_42%] md:object-[120%_42%] lg:object-[center_42%]"
           />
           <div className="absolute inset-0 bg-black/40" />
           {/* Soft fade on the leading edge instead of a hard crop line */}
@@ -168,29 +165,86 @@ export default function ScrollHero() {
 
         <div className="@container relative mx-auto flex w-full max-w-353 flex-1 flex-col justify-between px-4 md:px-10">
           <div className="flex justify-end pt-34 opacity-0 md:opacity-100 lg:-mr-6">
-            <p className="max-w-xs text-start text-sm font-bold uppercase leading-5 md:max-w-xs md:text-[15px] md:pl-4">
-              &ldquo; {t.hero.quote} {" "}&rdquo;
-            </p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: headingDone ? 1 : 0 }}
+              transition={{ duration: prefersReducedMotion ? 0 : 0.4, ease: SOFT_EASE }}
+              className="max-w-xs text-start text-sm font-bold uppercase leading-5 md:max-w-xs md:text-[15px] md:pl-4"
+            >
+              {quoteDone ? (
+                // Intro already played — a language switch after this point
+                // just crossfades the text instead of replaying the cascade.
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.span
+                    key={locale}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: prefersReducedMotion ? 0 : 0.3, ease: SOFT_EASE }}
+                  >
+                    “{t.hero.quote}”
+                  </motion.span>
+                </AnimatePresence>
+              ) : (
+                <FadeUpWords
+                  text={`“${t.hero.quote}”`}
+                  active={headingDone}
+                  onAnimationComplete={onQuoteComplete}
+                />
+              )}
+            </motion.p>
           </div>
 
           <div className="mt-16 mb-[8vh] md:mb-0 md:mt-24">
-            <div className="font-bold text-accent text-2xl">
-              <p>2010→2026</p>
-              <p>{t.hero.years}</p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: quoteDone ? 1 : 0 }}
+              transition={{ duration: prefersReducedMotion ? 0 : 0.3, ease: SOFT_EASE }}
+              className="font-bold text-accent text-2xl"
+            >
+              <p>
+                <FadeUpWords
+                  text="2010→2026"
+                  active={quoteDone}
+                  wordDuration={0.35}
+                  wordStagger={0.03}
+                  onAnimationComplete={onYearsLine1Complete}
+                />
+              </p>
+              <p>
+                <FadeUpWords
+                  text={t.hero.years}
+                  active={yearsLine1Done}
+                  wordDuration={0.35}
+                  wordStagger={0.03}
+                />
+              </p>
+            </motion.div>
 
             <div className="mt-6">
-              <h1 className="max-w-3xl text-right font-bold uppercase leading-[0.85] tracking-tight">
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: SOFT_EASE }}
+                onAnimationComplete={onHeadingComplete}
+                className="max-w-3xl text-right font-bold uppercase leading-[0.85] tracking-tight"
+              >
                 <span className="block text-right text-[14.2vw] sm:text-[9vw] md:text-[6.5rem] lg:text-[7.85rem]">
                   Renato
                 </span>
                 <span className="block text-right text-[17vw] sm:text-[13vw] md:text-[8rem] lg:text-[9.5rem]">
                   Marques
                 </span>
-              </h1>
-              <p className="mt-6 max-w-lg text-medium md:text-medium font-semibold ml-3">
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={headingDone ? { opacity: 1, y: 0 } : undefined}
+                transition={{ duration: prefersReducedMotion ? 0 : 0.45, ease: SOFT_EASE }}
+                onAnimationComplete={onRoleComplete}
+                className="mt-6 max-w-lg text-muted font-semibold ml-3"
+              >
                 {t.hero.role}
-              </p>
+              </motion.p>
             </div>
           </div>
         </div>
@@ -198,44 +252,26 @@ export default function ScrollHero() {
       
       {/* Tablet: docked box hasn't reached its desktop width yet, so anchor
           to the right edge instead of matching the download-CV column */}
-      <div className="fixed bottom-8 right-10 z-20 hidden md:block lg:hidden">
-        {pastExperience ? (
-          <button
-            type="button"
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-xs uppercase tracking-wide text-medium transition-colors hover:text-accent cursor-pointer font-bold"
-          >
-            {t.hero.backToTop}
-            <ScrollArrow flipped />
-          </button>
-        ) : (
-          <span className="flex items-center gap-2 text-xs uppercase tracking-wide text-medium font-bold text-left">
-            {t.hero.scroll}
-            <ScrollArrow flipped={false} />
-          </span>
-        )}
-      </div>
+      <ScrollHint
+        className={`fixed bottom-8 right-10 z-20 hidden transition-opacity duration-500 md:block lg:hidden ${
+          roleDone ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+        pastExperience={pastExperience}
+        scroll={t.hero.scroll}
+        backToTop={t.hero.backToTop}
+        onBackToTop={scrollToTop}
+      />
 
-      <div
-        className="fixed bottom-10 z-20 hidden lg:block"
+      <ScrollHint
+        className={`fixed bottom-10 z-20 hidden transition-opacity duration-500 lg:block ${
+          roleDone ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
         style={{ left: "var(--cv-anchor-left, 1.5rem)" }}
-      >
-        {pastExperience ? (
-          <button
-            type="button"
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-xs uppercase tracking-wide text-medium transition-colors hover:text-accent cursor-pointer font-bold"
-          >
-            {t.hero.backToTop}
-            <ScrollArrow flipped />
-          </button>
-        ) : (
-          <span className="flex items-center gap-2 text-xs uppercase tracking-wide text-medium font-bold text-left">
-            {t.hero.scroll}
-            <ScrollArrow flipped={false} />
-          </span>
-        )}
-      </div>
+        pastExperience={pastExperience}
+        scroll={t.hero.scroll}
+        backToTop={t.hero.backToTop}
+        onBackToTop={scrollToTop}
+      />
 
       {/* Mobile: back-to-top button, shown only once the user has scrolled
           to the end of the page. */}
@@ -248,7 +284,7 @@ export default function ScrollHero() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center gap-2 rounded-full bg-background/90 px-5 py-2.5 text-xs uppercase tracking-wide text-medium backdrop-blur transition-colors hover:text-accent cursor-pointer font-bold"
+            className="flex items-center gap-2 rounded-full bg-background/90 px-5 py-2.5 text-xs uppercase tracking-wide text-muted backdrop-blur transition-colors hover:text-accent cursor-pointer font-bold"
           >
             {t.hero.backToTop}
             <ScrollArrow flipped />
