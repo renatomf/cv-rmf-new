@@ -195,7 +195,7 @@ export default function ScrollHero() {
             </motion.p>
           </div>
 
-          <div className="mt-14 mb-[8vh] md:mb-0 md:mt-24">
+          <div className="mt-12 mb-[8vh] md:mb-0 md:mt-24">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: quoteDone ? 1 : 0 }}
