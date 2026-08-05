@@ -1,7 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState, type RefObject } from "react";
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll, useSpring, useTransform } from "framer-motion";
 
 // Scroll-linked dock/parallax behavior for the hero image: it starts full
 // width, then slides + narrows into a panel docked flush against the right
@@ -29,6 +29,14 @@ export function useHeroDock(heroRef: RefObject<HTMLElement | null>) {
     offset: ["start start", "end start"],
   });
 
+  // Lags a beat behind raw scroll so the dock glides instead of snapping
+  // 1:1 with the wheel/touch delta.
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 40,
+    mass: 1,
+  });
+
   useLayoutEffect(() => {
     let progress = 0;
     if (heroRef.current) {
@@ -46,6 +54,9 @@ export function useHeroDock(heroRef: RefObject<HTMLElement | null>) {
     }
 
     scrollYProgress.jump(progress);
+    // Jump the spring too, otherwise it would animate from 0 up to
+    // `progress` on load instead of starting there already docked.
+    smoothProgress.jump(progress);
 
     // Reloading mid-scroll needs a couple of frames for framer-motion's own
     // render step (scheduled via rAF) to apply the jumped value to the DOM —
@@ -58,10 +69,10 @@ export function useHeroDock(heroRef: RefObject<HTMLElement | null>) {
     return () => {
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
     };
-  }, [scrollYProgress]);
+  }, [scrollYProgress, smoothProgress]);
 
-  const width = useTransform(scrollYProgress, [0, 1], [viewport.width, dockWidth]);
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.3, 0]);
+  const width = useTransform(smoothProgress, [0, 1], [viewport.width, dockWidth]);
+  const overlayOpacity = useTransform(smoothProgress, [0, 0.6, 1], [1, 0.3, 0]);
 
   return { ready, width, overlayOpacity, edgeFadeOpacity: 1 };
 }
