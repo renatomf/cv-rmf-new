@@ -108,6 +108,7 @@ export default async function RootLayout({
       "https://www.linkedin.com/in/renatomf/",
       "https://github.com/renatomf",
     ],
+    knowsAbout: translations[locale].skills.items,
   };
 
   return (
