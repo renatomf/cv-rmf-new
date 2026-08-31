@@ -194,7 +194,13 @@ export default function Header() {
       >
         <div className="mx-auto flex max-w-348 items-start justify-between px-6 py-4 md:px-10">
           <div className="flex flex-col gap-1 text-md font-medium md:flex-row md:items-center md:gap-4">
-            <span className="font-semibold tracking-tight">Renato Marques</span>
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" })}
+              className="w-fit cursor-pointer text-left font-semibold tracking-tight transition-colors hover:text-accent"
+            >
+              Renato Marques
+            </button>
             <span className="flex items-center gap-3">
               <span className="relative flex size-2.5">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-75" />
