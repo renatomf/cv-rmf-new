@@ -18,8 +18,8 @@
         "Arquitetura Front-End",
         "Design Systems",
         "Code Review",
-        "ReactJS",
-        "NextJS",
+        "React",
+        "Next.js",
         "Angular",
         "Vue.js",
         "TypeScript",
@@ -82,35 +82,35 @@
       "jobTitle": "Engenheiro Front-End Sênior"
     },
     "header": {
-      "availableForWork": "Disponível para trabalho",
+      "availableForWork": "Disponível para oportunidades",
       "downloadCv": "Baixar CV",
       "contact": "Contato",
       "openMenu": "Abrir menu",
       "closeMenu": "Fechar menu",
       "mainNav": "Principal",
-      "language": "Linguagem"
+      "language": "Idioma"
     },
     "hero": {
       "quote": "Seja desenvolvendo software ou organizando a vida, busco clareza, equilíbrio e impacto duradouro. Acredito que grandes sistemas são construídos com intenção, consistência e atenção aos detalhes.",
       "years": "10+ anos exp.",
-      "role": "Engenheiro Front-End Sênior, baseado em São Paulo.",
+      "role": "Engenheiro de Software Sênior, baseado em São Paulo.",
       "scroll": "Rolar",
       "backToTop": "Voltar ao topo"
     },
     "about": {
       "title": "sobre",
       "paragraphs": [
-        "Sou **Engenheiro Front-End Sênior** com mais de **10 anos de experiência** na criação de aplicações web e mobile escaláveis, performáticas e orientadas ao negócio. Atuo na construção de produtos digitais de alta qualidade, definindo arquiteturas, padrões técnicos e soluções de engenharia que equilibram performance, experiência do usuário e objetivos estratégicos.",
-        "Especialista em **React, Next.js, TypeScript, React Native e Flutter**, possuo sólida experiência no desenvolvimento de plataformas modernas, Design Systems, aplicações escaláveis, integração de APIs, back-end, computação em nuvem e Inteligência Artificial aplicada ao desenvolvimento de software.",
-        "Ao longo da minha carreira, tenho contribuído para a evolução de produtos digitais por meio de boas práticas de engenharia, decisões arquiteturais bem fundamentadas e colaboração com equipes multidisciplinares. Acredito que tecnologia de excelência vai além do código: ela transforma ideias em soluções sustentáveis, eficientes e capazes de gerar impacto real para usuários e negócios."
+        "Sou Engenheiro de Software Sênior, com foco em Front-End e Full Stack, e mais de 10 anos de experiência no desenvolvimento de aplicações web e mobile escaláveis, performáticas e orientadas ao negócio. Atuo na concepção, arquitetura e evolução de produtos digitais, definindo soluções de engenharia e padrões técnicos que priorizam qualidade, segurança, manutenibilidade, performance e experiência do usuário.",
+        "Minha stack principal inclui React, Next.js, TypeScript e Node.js, com experiência em React Native e Flutter. Tenho experiência em arquitetura de software, Design Systems, integração de APIs, desenvolvimento back-end, computação em nuvem e Inteligência Artificial aplicada ao desenvolvimento de software, buscando construir soluções robustas, testáveis e alinhadas aos objetivos do negócio.",
+        "Ao longo da minha carreira, tenho contribuído para a evolução de produtos digitais por meio de boas práticas de engenharia, decisões arquiteturais fundamentadas e colaboração com equipes multidisciplinares. Minha experiência em desenvolvimento e Design Digital combina engenharia de software, visão de produto e experiência do usuário para criar soluções eficientes, sustentáveis e preparadas para evoluir."
       ]
     },
     "experience": {
       "title": "experiência",
       "items": [
         {
-          "meta": "LINKZ Informática  •  São Paulo  •  2025–atual",
-          "role": "Desenvolvedor Full Stack",
+          "meta": "LINKz Soluções Digitais  •  São Paulo  •  2025–atual",
+          "role": "Engenheiro Full Stack Sênior",
           "description": "Atuação no desenvolvimento de plataformas SaaS para publicidade digital, contribuindo para a definição da arquitetura da aplicação, evolução técnica da plataforma e integração de Inteligência Artificial ao ciclo de desenvolvimento.",
           "highlights": [
             "Desenvolvimento de aplicações com React e Next.js, utilizando SSR e React Server Components (RSC) para otimizar performance, SEO e experiência do usuário.",
@@ -122,7 +122,7 @@
         },
         {
           "meta": "BRLink / Ingram Micro  •  São Paulo  •  2019–2024",
-          "role": "Desenvolvedor Front-end Senior",
+          "role": "Engenheiro Front-End Sênior",
           "description": "Atuação em projetos enterprise, liderando iniciativas de arquitetura Front-End, evolução de Design Systems e definição de padrões técnicos para aplicações escaláveis utilizadas por múltiplas equipes.",
           "highlights": [
             "Definição da arquitetura Front-End utilizando React, Next.js e Flutter, com foco em escalabilidade, performance e manutenção de longo prazo.",
@@ -135,7 +135,7 @@
         },
         {
           "meta": "Ortiz Gaming  •  São Paulo  •  2018–2019",
-          "role": "Desenvolvedor Front-end",
+          "role": "Engenheiro Front-End Sênior",
           "description": "Desenvolvimento de plataforma web para monitoramento e gerenciamento remoto de máquinas de jogos em tempo real, priorizando confiabilidade, performance e atualização contínua de dados.",
           "highlights": [
             "Desenvolvimento da interface utilizando Angular, com foco em aplicações de alta disponibilidade.",
@@ -156,8 +156,8 @@
           ]
         },
         {
-          "meta": "Rm10 Publicidade  •  São Paulo  •  2015–2016",
-          "role": "Desenvolvedor Front-End / Designer Gráfico",
+          "meta": "RM10 Publicidade  •  São Paulo  •  2015–2016",
+          "role": "Desenvolvedor Front-End & Designer Gráfico",
           "description": "Desenvolvimento de sites, hotsites e landing pages para campanhas digitais, combinando desenvolvimento Front-End, design e comunicação visual.",
           "highlights": [
             "Desenvolvimento de websites responsivos e páginas promocionais.",
@@ -166,7 +166,7 @@
           ]
         },
         {
-          "meta": "LINKZ Informática  •  São Paulo  •  2012–2014",
+          "meta": "LINKz Soluções Digitais  •  São Paulo  •  2012–2014",
           "role": "Desenvolvedor Front-end",
           "description": "Desenvolvimento de soluções web, e-commerce e aplicações mobile para diferentes segmentos de mercado, participando da evolução de produtos digitais desde a concepção até a entrega.",
           "highlights": [
@@ -176,8 +176,8 @@
           ]
         },
         {
-          "meta": "Fiscosoft / Thomsom Reuters  •  São Paulo  •  2010–2011",
-          "role": "Desenvolvedor Front-end / Designer Gráfico",
+          "meta": "Fiscosoft / Thomson Reuters  •  São Paulo  •  2010–2011",
+          "role": "Desenvolvedor Front-end & Designer Gráfico",
           "description": "Atuação no desenvolvimento de soluções digitais e materiais institucionais para uma das principais referências em conteúdo tributário e jurídico do país.",
           "highlights": [
             "Desenvolvimento e manutenção de páginas web e conteúdos digitais.",
@@ -309,7 +309,7 @@
       "items": [
         {
           "name": "Marcelo Fernandes",
-          "role": "Linkz Informática  •  Sócio-fundador",
+          "role": "LINKz Soluções Digitais  •  Sócio-fundador",
           "quote": "Renato é um dos raros engenheiros que avança rápido sem quebrar as coisas. Ele entregou nosso MVP de ponta a ponta e nunca perdeu o senso de detalhe."
         },
         {
@@ -353,8 +353,8 @@
       "title": "contato",
       "phoneLabel": "Telefone",
       "emailLabel": "Email",
-      "linkedinLabel": "Linkedin",
-      "githubLabel": "Github",
+      "linkedinLabel": "LinkedIn",
+      "githubLabel": "GitHub",
       "thanks": "Obrigado pela",
       "tagline": "Vamos criar\nalgo\nincrível",
       "form": {
@@ -391,8 +391,8 @@
         "Front-End Architecture",
         "Design Systems",
         "Code Review",
-        "ReactJS",
-        "NextJS",
+        "React",
+        "Next.js",
         "Angular",
         "Vue.js",
         "TypeScript",
@@ -465,25 +465,25 @@
     },
     "hero": {
       "quote": "Whether building software or organizing life, I look for clarity, balance, and lasting impact. I believe great systems are built with intention, consistency, and attention to detail.",
-      "years": "10+ yrs exp.",
-      "role": "Senior Front-End Engineer, based in São Paulo.",
+      "years": "10+ years exp.",
+      "role": "Senior Software Engineer, based in São Paulo.",
       "scroll": "Scroll",
       "backToTop": "Back to top"
     },
     "about": {
       "title": "about",
       "paragraphs": [
-        "I'm a **Senior Front-End Engineer** with more than **10 years of experience** building scalable, high-performance, business-driven web and mobile applications. I work on building high-quality digital products, defining architectures, technical standards, and engineering solutions that balance performance, user experience, and strategic goals.",
-        "Specialized in **React, Next.js, TypeScript, React Native, and Flutter**, I have solid experience developing modern platforms, Design Systems, scalable applications, API integration, back-end, cloud computing, and Artificial Intelligence applied to software development.",
-        "Throughout my career, I've contributed to the evolution of digital products through strong engineering practices, well-grounded architectural decisions, and collaboration with cross-functional teams. I believe technology excellence goes beyond code: it turns ideas into sustainable, efficient solutions capable of creating real impact for users and businesses."
+        "I am a Senior Software Engineer focused on Front-End and Full Stack development, with over 10 years of experience building scalable, high-performance web and mobile applications aligned with business goals. I contribute to the design, architecture, and evolution of digital products, defining engineering solutions and technical standards that prioritize quality, security, maintainability, performance, and user experience.",
+        "My core tech stack includes React, Next.js, TypeScript, and Node.js, with experience in React Native and Flutter. My expertise includes software architecture, Design Systems, API integration, back-end development, cloud computing, and artificial intelligence applied to software development, with a focus on building robust, testable solutions aligned with business objectives.",
+        "Throughout my career, I have contributed to the evolution of digital products through engineering best practices, well-founded architectural decisions, and collaboration with cross-functional teams. My background in software development and Digital Design combines software engineering, product thinking, and user experience to build efficient, sustainable solutions designed to evolve."
       ]
     },
     "experience": {
       "title": "experience",
       "items": [
         {
-          "meta": "LINKZ Informática  •  São Paulo  •  2025–present",
-          "role": "Full Stack Developer",
+          "meta": "LINKz Soluções Digitais  •  São Paulo  •  2025–present",
+          "role": "Senior Full-Stack Engineer",
           "description": "Working on SaaS platforms for digital advertising, contributing to application architecture, the platform's technical evolution, and the integration of AI into the development lifecycle.",
           "highlights": [
             "Built applications with React and Next.js, using SSR and React Server Components (RSC) to optimize performance, SEO, and user experience.",
@@ -495,7 +495,7 @@
         },
         {
           "meta": "BRLink / Ingram Micro  •  São Paulo  •  2019–2024",
-          "role": "Senior Front-end Developer",
+          "role": "Senior Front-end Engineer",
           "description": "Worked on enterprise projects, leading Front-End architecture initiatives, Design System evolution, and technical standards for scalable applications used across multiple teams.",
           "highlights": [
             "Defined Front-End architecture using React, Next.js, and Flutter, focused on scalability, performance, and long-term maintainability.",
@@ -508,7 +508,7 @@
         },
         {
           "meta": "Ortiz Gaming  •  São Paulo  •  2018–2019",
-          "role": "Front-end Developer",
+          "role": "Senior Front-end Engineer",
           "description": "Developed a web platform for real-time monitoring and remote management of gaming machines, prioritizing reliability, performance, and continuous data updates.",
           "highlights": [
             "Built the interface using Angular, focused on high-availability applications.",
@@ -529,8 +529,8 @@
           ]
         },
         {
-          "meta": "Rm10 Publicidade  •  São Paulo  •  2015–2016",
-          "role": "Front-End Developer / Graphic Designer",
+          "meta": "RM10 Publicidade  •  São Paulo  •  2015–2016",
+          "role": "Front-End Developer & Graphic Designer",
           "description": "Developed websites, hotsites, and landing pages for digital campaigns, combining Front-End development, design, and visual communication.",
           "highlights": [
             "Developed responsive websites and promotional pages.",
@@ -539,7 +539,7 @@
           ]
         },
         {
-          "meta": "LINKZ Informática  •  São Paulo  •  2012–2014",
+          "meta": "LINKz Soluções Digitais  •  São Paulo  •  2012–2014",
           "role": "Front-end Developer",
           "description": "Developed web, e-commerce, and mobile solutions across different market segments, contributing to digital products from concept through delivery.",
           "highlights": [
@@ -549,8 +549,8 @@
           ]
         },
         {
-          "meta": "Fiscosoft / Thomsom Reuters  •  São Paulo  •  2010–2011",
-          "role": "Front-end Developer / Graphic Designer",
+          "meta": "Fiscosoft / Thomson Reuters  •  São Paulo  •  2010–2011",
+          "role": "Front-end Developer & Graphic Designer",
           "description": "Worked on digital solutions and institutional materials for one of the country's leading references in tax and legal content.",
           "highlights": [
             "Developed and maintained web pages and digital content.",
@@ -682,7 +682,7 @@
       "items": [
         {
           "name": "Marcelo Fernandes",
-          "role": "Linkz Informática  •  Founding Partner",
+          "role": "LINKz Soluções Digitais  •  Founding Partner",
           "quote": "Renato is one of the rare engineers who moves fast without breaking things. He shipped our MVP end-to-end and never lost sight of the details."
         },
         {

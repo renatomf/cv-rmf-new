@@ -127,7 +127,7 @@ export default function Header() {
   }, []);
 
   const cvFileName =
-    locale === "pt" ? "curriculo_renato_impresso-PT.pdf" : "curriculo_renato_impresso-EN.pdf";
+    locale === "pt" ? "cv-renato-marques-pt.pdf" : "cv-renato-marques-en.pdf";
   const cvHref = `/pdf/${cvFileName}`;
 
   useEffect(() => {
