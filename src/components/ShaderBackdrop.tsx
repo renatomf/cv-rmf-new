@@ -92,6 +92,9 @@ export default function ShaderBackdrop({ className = "" }: { className?: string 
     if (!canvas) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // Safari has no requestIdleCallback; checked via typeof so TS doesn't
+    // narrow `window` to never in the fallback branch.
+    const hasIdleCallback = typeof window.requestIdleCallback === "function";
     let gl: WebGLRenderingContext | null = null;
     let raf = 0;
     let last = 0;
@@ -193,10 +196,9 @@ export default function ShaderBackdrop({ className = "" }: { className?: string 
       visible = entry.isIntersecting;
       if (visible && !initialized) {
         initialized = true;
-        idleHandle =
-          "requestIdleCallback" in window
-            ? window.requestIdleCallback(init, { timeout: 1500 })
-            : window.setTimeout(init, 300);
+        idleHandle = hasIdleCallback
+          ? window.requestIdleCallback(init, { timeout: 1500 })
+          : window.setTimeout(init, 300);
       }
       if (visible) play();
       else pause();
@@ -234,7 +236,7 @@ export default function ShaderBackdrop({ className = "" }: { className?: string 
 
     return () => {
       pause();
-      if ("cancelIdleCallback" in window) window.cancelIdleCallback(idleHandle);
+      if (hasIdleCallback) window.cancelIdleCallback(idleHandle);
       else window.clearTimeout(idleHandle);
       intersection.disconnect();
       resizeObserver.disconnect();
