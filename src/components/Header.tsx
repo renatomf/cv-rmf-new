@@ -188,11 +188,15 @@ export default function Header() {
         initial={{ opacity: 0 }}
         animate={{ opacity: heroIntroDone ? 1 : 0 }}
         transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
-        className={`fixed inset-x-0 top-0 z-20 h-36 md:h-20 bg-linear-to-b from-black via-black/40 to-transparent ${
-          heroIntroDone ? "" : "pointer-events-none"
-        }`}
+        className="pointer-events-none fixed inset-x-0 top-0 z-20 h-75 bg-linear-to-b from-black via-black/40 to-transparent"
       >
-        <div className="mx-auto flex max-w-348 items-start justify-between px-6 py-4 md:px-10">
+        {/* The tall gradient is purely visual; only the bar itself takes clicks,
+            so it doesn't block the content scrolling underneath */}
+        <div
+          className={`mx-auto flex max-w-348 items-start justify-between px-6 py-4 md:px-10 ${
+            heroIntroDone ? "pointer-events-auto" : ""
+          }`}
+        >
           <div className="flex flex-col gap-1 text-md font-medium md:flex-row md:items-center md:gap-4">
             <button
               type="button"

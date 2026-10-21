@@ -275,35 +275,38 @@ export default function ScrollHero() {
                   Marques
                 </span>
               </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={headingDone ? { opacity: 1, y: 0 } : undefined}
-                transition={{ duration: prefersReducedMotion ? 0 : 0.45, ease: SOFT_EASE }}
-                onAnimationComplete={onRoleComplete}
-                className="mt-6 max-w-lg text-muted font-semibold ml-3"
-              >
-                {t.hero.role}
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={headingDone ? { opacity: 1, y: 0 } : undefined}
-                transition={{
-                  duration: prefersReducedMotion ? 0 : 0.45,
-                  delay: prefersReducedMotion ? 0 : 0.15,
-                  ease: SOFT_EASE,
-                }}
-                className="mt-12 flex max-w-3xl flex-wrap items-center justify-end gap-x-6 gap-y-2"
-              >
-                <SocialLink
-                  href="https://www.linkedin.com/in/renatomf/"
-                  label={t.contact.linkedinLabel}
+              {/* Role on the left, social links flush right under "Marques" */}
+              <div className="mt-6 flex max-w-3xl flex-wrap items-center justify-between gap-x-6 gap-y-3">
+                <motion.p
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={headingDone ? { opacity: 1, y: 0 } : undefined}
+                  transition={{ duration: prefersReducedMotion ? 0 : 0.45, ease: SOFT_EASE }}
+                  onAnimationComplete={onRoleComplete}
+                  className="ml-3 max-w-lg text-muted font-semibold"
                 >
-                  <LinkedInIcon />
-                </SocialLink>
-                <SocialLink href="https://github.com/renatomf" label={t.contact.githubLabel}>
-                  <GitHubIcon />
-                </SocialLink>
-              </motion.div>
+                  {t.hero.role}
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={headingDone ? { opacity: 1, y: 0 } : undefined}
+                  transition={{
+                    duration: prefersReducedMotion ? 0 : 0.45,
+                    delay: prefersReducedMotion ? 0 : 0.15,
+                    ease: SOFT_EASE,
+                  }}
+                  className="flex items-center gap-x-6"
+                >
+                  <SocialLink
+                    href="https://www.linkedin.com/in/renatomf/"
+                    label={t.contact.linkedinLabel}
+                  >
+                    <LinkedInIcon />
+                  </SocialLink>
+                  <SocialLink href="https://github.com/renatomf" label={t.contact.githubLabel}>
+                    <GitHubIcon />
+                  </SocialLink>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
