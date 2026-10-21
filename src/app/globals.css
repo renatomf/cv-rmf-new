@@ -35,4 +35,16 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Form fields still need a caret and selectable text to be editable */
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: text;
+  user-select: text;
+  -webkit-user-select: text;
 }

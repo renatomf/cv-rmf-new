@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "@/lib/i18n/LocaleContext";
 import { useHeroDock } from "@/hooks/useHeroDock";
 import { useHeroIntroSequence } from "@/hooks/useHeroIntroSequence";
 import FadeUpWords from "@/components/FadeUpWords";
+import ShaderBackdrop from "@/components/ShaderBackdrop";
 
 // Smooth, non-snappy ease-out used across the hero's entrance sequence.
 const SOFT_EASE = [0.33, 1, 0.68, 1] as const;
@@ -162,15 +163,15 @@ export default function ScrollHero() {
           style={{ top: 0, right: 0, width, height: "100%" }}
           className="absolute overflow-hidden"
         >
+          <ShaderBackdrop />
           <Image
-            src="/images/image-5.png"
+            src="/images/image-5-cutout.webp"
             alt=""
             fill
             priority
             sizes="(min-width: 768px) 35vw, 100vw"
-            className="object-cover object-[center_42%] md:object-[120%_42%] lg:object-[center_42%]"
+            className="object-cover object-[center_42%] brightness-60 md:object-[120%_42%] lg:object-[center_42%]"
           />
-          <div className="absolute inset-0 bg-black/40" />
           {/* Soft fade on the leading edge instead of a hard crop line */}
           <motion.div
             style={{ opacity: edgeFadeOpacity }}
@@ -189,15 +190,15 @@ export default function ScrollHero() {
       >
         {/* Mobile: static full-bleed image, no scroll animation */}
         <div className="absolute inset-0 overflow-hidden md:hidden">
+          <ShaderBackdrop />
           <Image
-            src="/images/image-5.png"
+            src="/images/image-5-cutout.webp"
             alt=""
             fill
             priority
             sizes="120vw"
-            className="object-cover object-center scale-120"
+            className="object-cover object-center scale-120 brightness-60"
           />
-          <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
         </div>
 
