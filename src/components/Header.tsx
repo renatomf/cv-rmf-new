@@ -102,7 +102,7 @@ export default function Header() {
   const { locale, setLocale } = useLocale();
   const t = useTranslations();
   const cvRef = useRef<HTMLAnchorElement>(null);
-  const { heroIntroDone } = useIntro();
+  const { heroIntroDone, markHeaderShown } = useIntro();
   const prefersReducedMotion = useReducedMotion();
 
   const applyLocale = (nextLocale: "pt" | "en") => {
@@ -188,6 +188,11 @@ export default function Header() {
         initial={{ opacity: 0 }}
         animate={{ opacity: heroIntroDone ? 1 : 0 }}
         transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
+        // Let the hero continue its entrance (quote, years) only once the
+        // header has fully faded in.
+        onAnimationComplete={() => {
+          if (heroIntroDone) markHeaderShown();
+        }}
         className="pointer-events-none fixed inset-x-0 top-0 z-20 h-75 bg-linear-to-b from-black via-black/40 to-transparent"
       >
         {/* The tall gradient is purely visual; only the bar itself takes clicks,

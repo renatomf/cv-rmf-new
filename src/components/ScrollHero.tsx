@@ -118,6 +118,7 @@ export default function ScrollHero() {
   const {
     prefersReducedMotion,
     headingDone,
+    quoteStarted,
     quoteDone,
     yearsLine1Done,
     roleDone,
@@ -206,7 +207,7 @@ export default function ScrollHero() {
           <div className="flex justify-end pt-34 opacity-0 md:opacity-100 lg:-mr-6">
             <motion.p
               initial={{ opacity: 0 }}
-              animate={{ opacity: headingDone ? 1 : 0 }}
+              animate={{ opacity: quoteStarted ? 1 : 0 }}
               transition={{ duration: prefersReducedMotion ? 0 : 0.4, ease: SOFT_EASE }}
               className="max-w-xs text-start text-sm font-bold uppercase leading-5 md:max-w-xs md:text-[15px] md:pl-4"
             >
@@ -227,7 +228,7 @@ export default function ScrollHero() {
               ) : (
                 <FadeUpWords
                   text={`“${t.hero.quote}”`}
-                  active={headingDone}
+                  active={quoteStarted}
                   onAnimationComplete={onQuoteComplete}
                 />
               )}
