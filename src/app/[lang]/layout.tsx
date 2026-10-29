@@ -1,14 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { LocaleProvider } from "@/lib/i18n/LocaleContext";
 import { IntroProvider } from "@/lib/intro/IntroContext";
 import translations from "@/data/translations.json";
 import "../globals.css";
 
-const inter = Inter({
+const inter = localFont({
+  src: "../fonts/inter-latin-wght-normal.woff2",
   variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: "100 900",
   display: "swap",
 });
 
